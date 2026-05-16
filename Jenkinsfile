@@ -24,7 +24,6 @@ pipeline {
                 """
             }
         }
-        }
         stage('CI Workloads (PR validation)') {
             when {
                 expression { env.CHANGE_ID }   // Runs only for Pull Request builds
@@ -64,3 +63,4 @@ pipeline {
             echo 'Pipeline failed. Check stage logs for root cause.'
         }
     }
+}
