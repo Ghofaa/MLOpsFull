@@ -2,6 +2,8 @@ pipeline {
     agent any
     triggers {
         githubPush()
+        // Fallback trigger: detect remote changes every 2 minutes
+        pollSCM('H/2 * * * *')
     }
     options {
         timestamps()
