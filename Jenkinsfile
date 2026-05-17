@@ -31,8 +31,8 @@ pipeline {
                 REM ===== ADDED: Stabilize packaging toolchain for Ray/pkg_resources (START) =====
                 python -m pip install --upgrade pip
                 pip install -r requirements.txt
-                python -m pip install "setuptools<81" "wheel<0.46"
-                python -c "import pkg_resources; print('pkg_resources OK')"
+                python -m pip install "setuptools==65.7.0" "wheel==0.41.2"
+                python -c "from pkg_resources._vendor.packaging.version import parse; print('pkg_resources._vendor OK')"
                 REM ===== ADDED: Stabilize packaging toolchain for Ray/pkg_resources (END) =====
                 """
             }
