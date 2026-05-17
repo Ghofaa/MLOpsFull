@@ -15,6 +15,9 @@ pipeline {
         // ===== ADDED: CI artifacts and quality gate settings (START) =====
         RESULTS_DIR = 'artifacts'
         F1_THRESHOLD = '0.30'
+        CI_NUM_SAMPLES = '256'
+        CI_NUM_EPOCHS = '3'
+        CI_BATCH_SIZE = '16'
         // ===== ADDED: CI artifacts and quality gate settings (END) =====
     }
     stages {
@@ -61,7 +64,7 @@ pipeline {
                 REM ===== ADDED: Ensure project root is importable for helper script (START) =====
                 set PYTHONPATH=%CD%
                 REM ===== ADDED: Ensure project root is importable for helper script (END) =====
-                python scripts\\ci_train_eval_gate.py --dataset datasets/dataset.csv --holdout datasets/holdout.csv --results-dir %RESULTS_DIR% --num-samples 64 --num-epochs 1 --batch-size 16 --f1-threshold %F1_THRESHOLD%
+                python scripts\\ci_train_eval_gate.py --dataset datasets/dataset.csv --holdout datasets/holdout.csv --results-dir %RESULTS_DIR% --num-samples %CI_NUM_SAMPLES% --num-epochs %CI_NUM_EPOCHS% --batch-size %CI_BATCH_SIZE% --f1-threshold %F1_THRESHOLD%
                 """
             }
         }
@@ -82,7 +85,7 @@ pipeline {
                 REM ===== ADDED: Ensure project root is importable for helper script (START) =====
                 set PYTHONPATH=%CD%
                 REM ===== ADDED: Ensure project root is importable for helper script (END) =====
-                python scripts\\ci_train_eval_gate.py --dataset datasets/dataset.csv --holdout datasets/holdout.csv --results-dir %RESULTS_DIR% --num-samples 64 --num-epochs 1 --batch-size 16 --f1-threshold %F1_THRESHOLD%
+                python scripts\\ci_train_eval_gate.py --dataset datasets/dataset.csv --holdout datasets/holdout.csv --results-dir %RESULTS_DIR% --num-samples %CI_NUM_SAMPLES% --num-epochs %CI_NUM_EPOCHS% --batch-size %CI_BATCH_SIZE% --f1-threshold %F1_THRESHOLD%
                 """
             }
         }
