@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
-from urllib.parse import urlparse
 
 import numpy as np
 import ray
@@ -128,8 +127,9 @@ def get_best_checkpoint(run_id: str) -> TorchCheckpoint:  # pragma: no cover, ml
     Returns:
         TorchCheckpoint: Best checkpoint from the run.
     """
-    artifact_dir = urlparse(mlflow.get_run(run_id).info.artifact_uri).path  # get path from mlflow
-    results = Result.from_path(artifact_dir)
+    # Resolve run artifacts via MLflow so path handling works on Windows/Jenkins.
+    artifact_dir = mlflow.artifacts.download_artifacts(run_id=run_id)
+    results = Result.from_path(str(artifact_dir))
     return results.best_checkpoints[0][0]
 
 
