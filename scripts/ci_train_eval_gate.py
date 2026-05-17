@@ -71,7 +71,7 @@ def main() -> int:
             dataset_loc=args.dataset,
             train_loop_config=json.dumps(train_loop_config),
             num_workers=1,
-            cpu_per_worker=1,
+            cpu_per_worker=0.001,
             gpu_per_worker=0,
             num_samples=args.num_samples,
             num_epochs=args.num_epochs,
