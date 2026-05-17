@@ -58,6 +58,9 @@ pipeline {
                 bat """
                 call %VENV_DIR%\\Scripts\\activate
                 if not exist %RESULTS_DIR% mkdir %RESULTS_DIR%
+                REM ===== ADDED: Ensure project root is importable for helper script (START) =====
+                set PYTHONPATH=%CD%
+                REM ===== ADDED: Ensure project root is importable for helper script (END) =====
                 python scripts\\ci_train_eval_gate.py --dataset datasets/dataset.csv --holdout datasets/holdout.csv --results-dir %RESULTS_DIR% --num-samples 64 --num-epochs 1 --batch-size 16 --f1-threshold %F1_THRESHOLD%
                 """
             }
@@ -76,6 +79,9 @@ pipeline {
                 bat """
                 call %VENV_DIR%\\Scripts\\activate
                 if not exist %RESULTS_DIR% mkdir %RESULTS_DIR%
+                REM ===== ADDED: Ensure project root is importable for helper script (START) =====
+                set PYTHONPATH=%CD%
+                REM ===== ADDED: Ensure project root is importable for helper script (END) =====
                 python scripts\\ci_train_eval_gate.py --dataset datasets/dataset.csv --holdout datasets/holdout.csv --results-dir %RESULTS_DIR% --num-samples 64 --num-epochs 1 --batch-size 16 --f1-threshold %F1_THRESHOLD%
                 """
             }
