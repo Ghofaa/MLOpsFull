@@ -62,7 +62,9 @@ pipeline {
         stage('MLOps Train + Evaluate Gate (main)') {
             when {
                 allOf {
-                    branch 'main'
+                    // ===== ADDED: Classic pipeline main-branch detection (START) =====
+                    expression { (env.GIT_BRANCH ?: '').contains('origin/main') }
+                    // ===== ADDED: Classic pipeline main-branch detection (END) =====
                     expression { !env.CHANGE_ID }   // main push (not PR)
                 }
             }
@@ -79,7 +81,9 @@ pipeline {
         stage('CD Serve + Docs (main push)') {
             when {
                 allOf {
-                    branch 'main'
+                    // ===== ADDED: Classic pipeline main-branch detection (START) =====
+                    expression { (env.GIT_BRANCH ?: '').contains('origin/main') }
+                    // ===== ADDED: Classic pipeline main-branch detection (END) =====
                     expression { !env.CHANGE_ID }   // Push to main (not PR)
                 }
             }
