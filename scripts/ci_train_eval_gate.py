@@ -56,10 +56,15 @@ def main() -> int:
     try:
         if ray.is_initialized():
             ray.shutdown()
+        # ===== ADDED: Force CPU-only Ray init for Jenkins Windows agent (START) =====
         ray.init(
             ignore_reinit_error=True,
+            num_cpus=1,
+            num_gpus=0,
+            include_dashboard=False,
             runtime_env={"env_vars": {"GITHUB_USERNAME": os.environ.get("GITHUB_USERNAME", "ci-user")}},
         )
+        # ===== ADDED: Force CPU-only Ray init for Jenkins Windows agent (END) =====
 
         train.train_model(
             experiment_name=experiment_name,
