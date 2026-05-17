@@ -28,8 +28,12 @@ pipeline {
                 bat """
                 %PYTHON% -m venv %VENV_DIR%
                 call %VENV_DIR%\\Scripts\\activate
-                python -m pip install --upgrade pip setuptools wheel
+                REM ===== ADDED: Stabilize packaging toolchain for Ray/pkg_resources (START) =====
+                python -m pip install --upgrade pip
                 pip install -r requirements.txt
+                python -m pip install "setuptools<81" "wheel<0.46"
+                python -c "import pkg_resources; print('pkg_resources OK')"
+                REM ===== ADDED: Stabilize packaging toolchain for Ray/pkg_resources (END) =====
                 """
             }
         }
