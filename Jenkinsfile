@@ -12,6 +12,10 @@ pipeline {
     environment {
         PYTHON = 'python'
         VENV_DIR = 'venv'
+        // ===== ADDED: CI artifacts and quality gate settings (START) =====
+        RESULTS_DIR = 'artifacts'
+        F1_THRESHOLD = '0.30'
+        // ===== ADDED: CI artifacts and quality gate settings (END) =====
     }
     stages {
         stage('Checkout') {
@@ -41,7 +45,38 @@ pipeline {
                 """
             }
         }
- stage('CD Serve + Docs (main push)') {
+        // ===== ADDED: MLOPS TRAIN + EVALUATE GATE (START) =====
+        stage('MLOps Train + Evaluate Gate (PR)') {
+            when {
+                expression { env.CHANGE_ID }   // PR only
+            }
+            steps {
+                bat """
+                call %VENV_DIR%\\Scripts\\activate
+                if not exist %RESULTS_DIR% mkdir %RESULTS_DIR%
+                python scripts\\ci_train_eval_gate.py --dataset datasets/dataset.csv --holdout datasets/holdout.csv --results-dir %RESULTS_DIR% --num-samples 64 --num-epochs 1 --batch-size 16 --f1-threshold %F1_THRESHOLD%
+                """
+            }
+        }
+
+        stage('MLOps Train + Evaluate Gate (main)') {
+            when {
+                allOf {
+                    branch 'main'
+                    expression { !env.CHANGE_ID }   // main push (not PR)
+                }
+            }
+            steps {
+                bat """
+                call %VENV_DIR%\\Scripts\\activate
+                if not exist %RESULTS_DIR% mkdir %RESULTS_DIR%
+                python scripts\\ci_train_eval_gate.py --dataset datasets/dataset.csv --holdout datasets/holdout.csv --results-dir %RESULTS_DIR% --num-samples 64 --num-epochs 1 --batch-size 16 --f1-threshold %F1_THRESHOLD%
+                """
+            }
+        }
+        // ===== ADDED: MLOPS TRAIN + EVALUATE GATE (END) =====
+
+        stage('CD Serve + Docs (main push)') {
             when {
                 allOf {
                     branch 'main'
@@ -59,7 +94,9 @@ pipeline {
     }
     post {
         always {
-            archiveArtifacts artifacts: 'Jenkinsfile, requirements.txt', allowEmptyArchive: true
+            // ===== ADDED: Archive gate outputs for review (START) =====
+            archiveArtifacts artifacts: 'Jenkinsfile, requirements.txt, artifacts/*.json', allowEmptyArchive: true
+            // ===== ADDED: Archive gate outputs for review (END) =====
         }
         success {
             echo 'Pipeline finished successfully.'
