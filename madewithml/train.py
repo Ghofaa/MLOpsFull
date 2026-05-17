@@ -156,6 +156,7 @@ def train_model(
     num_workers: Annotated[int, typer.Option(help="number of workers to use for training.")] = 1,
     cpu_per_worker: Annotated[int, typer.Option(help="number of CPUs to use per worker.")] = 1,
     gpu_per_worker: Annotated[int, typer.Option(help="number of GPUs to use per worker.")] = 0,
+    trainer_cpus: Annotated[int, typer.Option(help="number of CPUs to reserve for trainer/driver.")] = 1,
     num_samples: Annotated[int, typer.Option(help="number of samples to use from dataset.")] = None,
     num_epochs: Annotated[int, typer.Option(help="number of epochs to train for.")] = 1,
     batch_size: Annotated[int, typer.Option(help="number of samples per batch.")] = 256,
@@ -170,6 +171,7 @@ def train_model(
         num_workers (int, optional): number of workers to use for training. Defaults to 1.
         cpu_per_worker (int, optional): number of CPUs to use per worker. Defaults to 1.
         gpu_per_worker (int, optional): number of GPUs to use per worker. Defaults to 0.
+        trainer_cpus (int, optional): number of CPUs to reserve for trainer/driver. Defaults to 1.
         num_samples (int, optional): number of samples to use from dataset.
             If this is passed in, it will override the config. Defaults to None.
         num_epochs (int, optional): number of epochs to train for.
@@ -192,6 +194,7 @@ def train_model(
         num_workers=num_workers,
         use_gpu=bool(gpu_per_worker),
         resources_per_worker={"CPU": cpu_per_worker, "GPU": gpu_per_worker},
+        trainer_resources={"CPU": trainer_cpus},
     )
 
     # Checkpoint config

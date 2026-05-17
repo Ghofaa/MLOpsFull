@@ -73,6 +73,7 @@ def main() -> int:
             num_workers=1,
             cpu_per_worker=0.001,
             gpu_per_worker=0,
+            trainer_cpus=0,
             num_samples=args.num_samples,
             num_epochs=args.num_epochs,
             batch_size=args.batch_size,
