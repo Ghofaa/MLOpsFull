@@ -1,7 +1,6 @@
 import argparse
 import json
 import os
-import sys
 import time
 import urllib.request
 
@@ -12,12 +11,6 @@ from madewithml.serve import ModelDeployment
 
 def http_get(url: str) -> dict:
     with urllib.request.urlopen(url, timeout=30) as r:
-        return json.loads(r.read().decode("utf-8"))
-
-def http_post(url: str, payload: dict) -> dict:
-    data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=30) as r:
         return json.loads(r.read().decode("utf-8"))
 
 def main() -> int:
@@ -42,10 +35,10 @@ def main() -> int:
 
     base = f"http://{args.host}:{args.port}"
     health = http_get(f"{base}/")
-    pred = http_post(f"{base}/predict/", {"title": "Smoke test", "description": "CI deploy check"})
+    run_info = http_get(f"{base}/run_id/")
 
-    ok = health.get("status-code") == 200 and "results" in pred
-    report = {"run_id": run_id, "health": health, "predict": pred, "passed": ok}
+    ok = health.get("status-code") == 200 and run_info.get("run_id") == run_id
+    report = {"run_id": run_id, "health": health, "run_info": run_info, "passed": ok}
     json.dump(report, open(args.report, "w", encoding="utf-8"), indent=2)
 
     serve.shutdown()

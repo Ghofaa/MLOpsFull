@@ -105,7 +105,9 @@ pipeline {
                 call %VENV_DIR%\\Scripts\\activate
                 set PYTHONPATH=%CD%
                 python scripts\\ci_deploy_smoke.py --summary artifacts\\quality_gate_summary.json --report artifacts\\deploy_smoke.json
+                if errorlevel 1 exit /b 1
                 mkdocs build --strict
+                if errorlevel 1 exit /b 1
                 echo Deploy smoke + docs build completed.
                 """
             }
