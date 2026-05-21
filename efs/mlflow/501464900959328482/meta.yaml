@@ -1,0 +1,6 @@
+artifact_location: file://C:\Master\mlOps\MLOpsFull-1\efs\mlflow/501464900959328482
+creation_time: 1779019662924
+experiment_id: '501464900959328482'
+last_update_time: 1779019662924
+lifecycle_stage: active
+name: ci-mlops-local

@@ -1,0 +1,240 @@
+INFO 2026-05-17 13:05:36,980 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001AD5FA4BEE0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-17 13:05:36,983 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] Le chemin d’accès spécifié est introuvable: '/dev/vfio'
+
+INFO 2026-05-17 13:08:40,023 [root:file_util.py:copy_file:137]
+copying C:/Master/mlOps/MLOpsFull-1/efs\TorchTrainer_2026-05-17_13-07-42\TorchTrainer_01e04_00000_0_2026-05-17_13-07-42\error.txt -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\dccdfeabef39467e811d2ed607007421\artifacts
+
+INFO 2026-05-17 13:08:40,026 [root:file_util.py:copy_file:137]
+copying C:/Master/mlOps/MLOpsFull-1/efs\TorchTrainer_2026-05-17_13-07-42\TorchTrainer_01e04_00000_0_2026-05-17_13-07-42\events.out.tfevents.1779019682.anaGhof -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\dccdfeabef39467e811d2ed607007421\artifacts
+
+INFO 2026-05-17 13:08:40,031 [root:file_util.py:copy_file:137]
+copying C:/Master/mlOps/MLOpsFull-1/efs\TorchTrainer_2026-05-17_13-07-42\TorchTrainer_01e04_00000_0_2026-05-17_13-07-42\params.json -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\dccdfeabef39467e811d2ed607007421\artifacts
+
+INFO 2026-05-17 13:08:40,035 [root:file_util.py:copy_file:137]
+copying C:/Master/mlOps/MLOpsFull-1/efs\TorchTrainer_2026-05-17_13-07-42\TorchTrainer_01e04_00000_0_2026-05-17_13-07-42\params.pkl -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\dccdfeabef39467e811d2ed607007421\artifacts
+
+INFO 2026-05-17 13:08:40,038 [root:file_util.py:copy_file:137]
+copying C:/Master/mlOps/MLOpsFull-1/efs\TorchTrainer_2026-05-17_13-07-42\TorchTrainer_01e04_00000_0_2026-05-17_13-07-42\result.json -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\dccdfeabef39467e811d2ed607007421\artifacts
+
+INFO 2026-05-17 13:32:38,700 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:32:38,703 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:32:55,196 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:34:11,504 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:34:11,511 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:35:12,686 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:35:12,692 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:35:49,777 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:35:49,787 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:36:07,041 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:44:26,745 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:44:26,747 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:44:39,415 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:45:10,982 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:45:10,984 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:45:21,628 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:45:52,135 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:45:52,138 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:46:03,070 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:46:46,147 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:46:46,149 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:47:00,556 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:47:44,163 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:47:44,166 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:47:53,835 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:48:25,090 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:48:25,094 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:48:34,985 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:49:08,620 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:49:08,622 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:49:21,668 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:49:51,964 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:49:51,966 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:50:01,717 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:50:32,923 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:50:32,925 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:50:42,391 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:51:16,420 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:51:16,423 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:51:28,501 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:52:06,692 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:52:06,695 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:52:21,704 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:53:11,787 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:53:11,789 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:53:21,429 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:54:00,411 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:54:00,413 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:54:11,159 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:54:45,945 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:54:45,947 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:54:55,245 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:55:25,311 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:55:25,314 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:55:34,683 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:56:05,964 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:56:05,965 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:56:17,801 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:56:49,605 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:56:49,607 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:57:01,224 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:57:28,677 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:57:28,679 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:57:37,181 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:58:04,527 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:58:04,529 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:58:12,323 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:58:40,855 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:58:40,857 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:58:49,389 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+
+INFO 2026-05-17 13:59:17,235 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NameResolutionError("HTTPConnection(host='metadata.google.internal', port=80): Failed to resolve 'metadata.google.internal' ([Errno -2] Name or service not known)"))
+
+INFO 2026-05-17 13:59:17,237 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+
+INFO 2026-05-17 13:59:26,853 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
+Started detached Serve instance in namespace "serve".
+

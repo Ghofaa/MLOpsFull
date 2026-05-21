@@ -104,11 +104,10 @@ pipeline {
                 bat """
                 call %VENV_DIR%\\Scripts\\activate
                 set PYTHONPATH=%CD%
-                python -m madewithml.serve --help
+                python scripts\\ci_deploy_smoke.py --summary artifacts\\quality_gate_summary.json --report artifacts\\deploy_smoke.json
                 mkdocs build --strict
-                echo Docs built to site/
+                echo Deploy smoke + docs build completed.
                 """
-                echo 'Main branch push detected: serve/docs deployment stage executed.'
             }
         }
     }

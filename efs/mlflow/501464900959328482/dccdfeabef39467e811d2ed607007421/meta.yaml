@@ -1,0 +1,15 @@
+artifact_uri: file://C:\Master\mlOps\MLOpsFull-1\efs\mlflow/501464900959328482/dccdfeabef39467e811d2ed607007421/artifacts
+end_time: 1779019720050
+entry_point_name: ''
+experiment_id: '501464900959328482'
+lifecycle_stage: active
+run_id: dccdfeabef39467e811d2ed607007421
+run_name: TorchTrainer_01e04_00000
+run_uuid: dccdfeabef39467e811d2ed607007421
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779019682283
+status: 4
+tags: []
+user_id: unknown
