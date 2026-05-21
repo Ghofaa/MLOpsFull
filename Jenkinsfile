@@ -122,28 +122,49 @@ pipeline {
             steps {
                 bat """
                 call %VENV_DIR%\\Scripts\\activate
+                setlocal EnableExtensions EnableDelayedExpansion
                 if not exist artifacts\\monitoring mkdir artifacts\\monitoring
                 if not exist artifacts\\alerts mkdir artifacts\\alerts
+                echo [MON] cwd=%CD%
+                echo [MON] artifacts tree before monitoring:
+                dir artifacts
 
                 REM ===== ADDED: Expectations validation for monitoring (START) =====
-                python scripts\\monitor_expectations.py --input datasets\\holdout.csv --output artifacts\\monitoring\\expectations_report.json
-                if errorlevel 1 exit /b 1
+                python -u scripts\\monitor_expectations.py --input datasets\\holdout.csv --output artifacts\\monitoring\\expectations_report.json
+                set RC=!ERRORLEVEL!
+                echo [MON] monitor_expectations rc=!RC!
+                if not "!RC!"=="0" exit /b !RC!
                 REM ===== ADDED: Expectations validation for monitoring (END) =====
 
                 REM ===== ADDED: Sliding-window monitoring metrics (START) =====
+                echo [MON] checking artifacts\\eval_results.json
                 if exist artifacts\\eval_results.json (
-                    python scripts\\monitor_sliding_metrics.py --input artifacts\\eval_results.json --output artifacts\\monitoring\\performance_timeseries.json --window-size 24
-                    if errorlevel 1 exit /b 1
+                    echo [MON] found artifacts\\eval_results.json
+                    for %%I in (artifacts\\eval_results.json) do echo [MON] eval_results size=%%~zI bytes modified=%%~tI
+                    echo [MON] ----- BEGIN eval_results.json -----
+                    type artifacts\\eval_results.json
+                    echo [MON] ----- END eval_results.json -----
+                    python -u scripts\\monitor_sliding_metrics.py --input artifacts\\eval_results.json --output artifacts\\monitoring\\performance_timeseries.json --window-size 24
+                    set RC=!ERRORLEVEL!
+                    echo [MON] monitor_sliding_metrics rc=!RC!
+                    if not "!RC!"=="0" exit /b !RC!
                 ) else (
-                    echo Missing artifacts\\eval_results.json for sliding metrics.
-                    exit /b 1
+                    echo [MON][ERROR] Missing artifacts\\eval_results.json for sliding metrics.
+                    echo [MON] artifacts tree when missing eval_results:
+                    dir artifacts
+                    exit /b 20
                 )
                 REM ===== ADDED: Sliding-window monitoring metrics (END) =====
 
                 REM ===== ADDED: Alerting rules + Act workflow (START) =====
-                python scripts\\monitor_alerts.py --drift-log logs\\error.log --performance artifacts\\monitoring\\performance_timeseries.json --output artifacts\\alerts\\latest_alert.json
-                python scripts\\monitor_act.py --alert artifacts\\alerts\\latest_alert.json --expectations artifacts\\monitoring\\expectations_report.json --output artifacts\\alerts\\action_decision.json --trigger-file artifacts\\alerts\\retrain.trigger
-                if errorlevel 1 exit /b 1
+                python -u scripts\\monitor_alerts.py --drift-log logs\\error.log --performance artifacts\\monitoring\\performance_timeseries.json --output artifacts\\alerts\\latest_alert.json
+                set RC=!ERRORLEVEL!
+                echo [MON] monitor_alerts rc=!RC!
+                if not "!RC!"=="0" exit /b !RC!
+                python -u scripts\\monitor_act.py --alert artifacts\\alerts\\latest_alert.json --expectations artifacts\\monitoring\\expectations_report.json --output artifacts\\alerts\\action_decision.json --trigger-file artifacts\\alerts\\retrain.trigger
+                set RC=!ERRORLEVEL!
+                echo [MON] monitor_act rc=!RC!
+                if not "!RC!"=="0" exit /b !RC!
                 REM ===== ADDED: Alerting rules + Act workflow (END) =====
                 """
             }
