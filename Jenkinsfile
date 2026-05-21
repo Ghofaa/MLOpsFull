@@ -102,8 +102,11 @@ pipeline {
             }
             steps {
                 bat """
-                call %VENV_DIR%\\Scripts\\activate
+                call %VENV_DIR%\Scripts\activate
+                set PYTHONPATH=%CD%
                 python -m madewithml.serve --help
+                mkdocs build --strict
+                echo Docs built to site/
                 """
                 echo 'Main branch push detected: serve/docs deployment stage executed.'
             }
@@ -112,7 +115,7 @@ pipeline {
     post {
         always {
             // ===== ADDED: Archive gate outputs for review (START) =====
-            archiveArtifacts artifacts: 'Jenkinsfile, requirements.txt, artifacts/*.json', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'Jenkinsfile, requirements.txt, artifacts/*.json, site/**', allowEmptyArchive: true            
             // ===== ADDED: Archive gate outputs for review (END) =====
         }
         success {

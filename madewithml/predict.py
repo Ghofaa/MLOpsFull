@@ -80,7 +80,7 @@ def predict_proba(
     """Predict tags (with probabilities) for input data from a dataframe.
 
     Args:
-        df (pd.DataFrame): dataframe with input features.
+        ds (ray.data.dataset.Dataset): Ray dataset with input features.
         predictor (TorchPredictor): loaded predictor from a checkpoint.
 
     Returns:

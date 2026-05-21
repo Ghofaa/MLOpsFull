@@ -1,0 +1,27 @@
+site_name: Made With ML — MLOps
+site_description: Documentation for the Made With ML tag classification MLOps project.
+
+theme:
+  name: readthedocs
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [.]
+          options:
+            show_source: false
+            members_order: source
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - CI/CD: ci-cd.md
+  - Monitoring: monitoring.md
+  - API Reference:
+      - train: api/train.md
+      - evaluate: api/evaluate.md
+      - serve: api/serve.md
+      - predict: api/predict.md
+      - data: api/data.md

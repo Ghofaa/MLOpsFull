@@ -23,9 +23,11 @@ seaborn==0.12.2
 wordcloud==1.9.2
 
 # Documentation
-mkdocs==1.4.2
-mkdocstrings==0.21.2
-mkdocstrings[python]>=0.18
+mkdocs==1.5.3
+mkdocstrings==0.26.2
+mkdocstrings-python==1.10.8
+mkdocs-autorefs==1.2.0
+griffe==1.4.1
 
 # Styling
 black==23.3.0
