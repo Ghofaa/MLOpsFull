@@ -23,7 +23,7 @@ app = FastAPI(
 )
 
 
-@serve.deployment(num_replicas="1", ray_actor_options={"num_cpus": 8, "num_gpus": 0})
+@serve.deployment(num_replicas="1", ray_actor_options={"num_cpus": 1, "num_gpus": 0})
 @serve.ingress(app)
 class ModelDeployment:
     def __init__(self, run_id: str, threshold: int = 0.9):
