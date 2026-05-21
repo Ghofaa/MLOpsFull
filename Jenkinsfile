@@ -102,7 +102,7 @@ pipeline {
             }
             steps {
                 bat """
-                call %VENV_DIR%\Scripts\activate
+                call %VENV_DIR%\\Scripts\\activate
                 set PYTHONPATH=%CD%
                 python -m madewithml.serve --help
                 mkdocs build --strict
