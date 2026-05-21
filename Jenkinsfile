@@ -112,11 +112,47 @@ pipeline {
                 """
             }
         }
+        stage('Monitoring Rules + Act (main push)') {
+            when {
+                allOf {
+                    expression { (env.GIT_BRANCH ?: '').contains('origin/main') }
+                    expression { !env.CHANGE_ID }
+                }
+            }
+            steps {
+                bat """
+                call %VENV_DIR%\\Scripts\\activate
+                if not exist artifacts\\monitoring mkdir artifacts\\monitoring
+                if not exist artifacts\\alerts mkdir artifacts\\alerts
+
+                REM ===== ADDED: Expectations validation for monitoring (START) =====
+                python scripts\\monitor_expectations.py --input datasets\\holdout.csv --output artifacts\\monitoring\\expectations_report.json
+                if errorlevel 1 exit /b 1
+                REM ===== ADDED: Expectations validation for monitoring (END) =====
+
+                REM ===== ADDED: Sliding-window monitoring metrics (START) =====
+                if exist artifacts\\eval_results.json (
+                    python scripts\\monitor_sliding_metrics.py --input artifacts\\eval_results.json --output artifacts\\monitoring\\performance_timeseries.json --window-size 24
+                    if errorlevel 1 exit /b 1
+                ) else (
+                    echo Missing artifacts\\eval_results.json for sliding metrics.
+                    exit /b 1
+                )
+                REM ===== ADDED: Sliding-window monitoring metrics (END) =====
+
+                REM ===== ADDED: Alerting rules + Act workflow (START) =====
+                python scripts\\monitor_alerts.py --drift-log logs\\error.log --performance artifacts\\monitoring\\performance_timeseries.json --output artifacts\\alerts\\latest_alert.json
+                python scripts\\monitor_act.py --alert artifacts\\alerts\\latest_alert.json --expectations artifacts\\monitoring\\expectations_report.json --output artifacts\\alerts\\action_decision.json --trigger-file artifacts\\alerts\\retrain.trigger
+                if errorlevel 1 exit /b 1
+                REM ===== ADDED: Alerting rules + Act workflow (END) =====
+                """
+            }
+        }
     }
     post {
         always {
             // ===== ADDED: Archive gate outputs for review (START) =====
-            archiveArtifacts artifacts: 'Jenkinsfile, requirements.txt, artifacts/*.json, site/**', allowEmptyArchive: true            
+            archiveArtifacts artifacts: 'Jenkinsfile, requirements.txt, artifacts/*.json, artifacts/monitoring/*.json, artifacts/alerts/*.json, site/**', allowEmptyArchive: true            
             // ===== ADDED: Archive gate outputs for review (END) =====
         }
         success {
