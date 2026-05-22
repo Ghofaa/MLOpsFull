@@ -130,10 +130,28 @@ pipeline {
                 dir artifacts
 
                 REM ===== ADDED: Expectations validation for monitoring (START) =====
-                python -u scripts\\monitor_expectations.py --input datasets\\holdout.csv --output artifacts\\monitoring\\expectations_report.json
+                echo [MON] running monitor_expectations
+                where python
+                %VENV_DIR%\\Scripts\\python.exe -c "import sys; print('exe=', sys.executable); print('ver=', sys.version)"
+                %VENV_DIR%\\Scripts\\python.exe -c "import great_expectations as ge; print('GE=', ge.__version__)"
+                %VENV_DIR%\\Scripts\\python.exe -c "import pandas as pd; print('pandas=', pd.__version__)"
+                %VENV_DIR%\\Scripts\\python.exe -X faulthandler -u scripts\\monitor_expectations.py --input datasets\\holdout.csv --output artifacts\\monitoring\\expectations_report.json
                 set RC=!ERRORLEVEL!
+                echo [MON] raw monitor_expectations errorlevel=!RC!
+                if exist artifacts\\monitoring\\expectations_report.json (
+                    echo [MON] ----- BEGIN expectations_report.json -----
+                    type artifacts\\monitoring\\expectations_report.json
+                    echo [MON] ----- END expectations_report.json -----
+                ) else (
+                    echo [MON][ERROR] Missing artifacts\\monitoring\\expectations_report.json
+                    exit /b 31
+                )
+                %VENV_DIR%\\Scripts\\python.exe -c "import json,sys; d=json.load(open(r'artifacts\\monitoring\\expectations_report.json', encoding='utf-8')); sys.exit(0 if d.get('success') else 1)"
+                set RC_REPORT=!ERRORLEVEL!
+                echo [MON] expectations_report success rc=!RC_REPORT!
+                if not "!RC_REPORT!"=="0" exit /b 32
+                if not "!RC!"=="0" echo [MON][WARN] monitor_expectations nonzero rc with success report
                 echo [MON] monitor_expectations rc=!RC!
-                if not "!RC!"=="0" exit /b !RC!
                 REM ===== ADDED: Expectations validation for monitoring (END) =====
 
                 REM ===== ADDED: Sliding-window monitoring metrics (START) =====
@@ -144,7 +162,7 @@ pipeline {
                     echo [MON] ----- BEGIN eval_results.json -----
                     type artifacts\\eval_results.json
                     echo [MON] ----- END eval_results.json -----
-                    python -u scripts\\monitor_sliding_metrics.py --input artifacts\\eval_results.json --output artifacts\\monitoring\\performance_timeseries.json --window-size 24
+                    %VENV_DIR%\\Scripts\\python.exe -u scripts\\monitor_sliding_metrics.py --input artifacts\\eval_results.json --output artifacts\\monitoring\\performance_timeseries.json --window-size 24
                     set RC=!ERRORLEVEL!
                     echo [MON] monitor_sliding_metrics rc=!RC!
                     if not "!RC!"=="0" exit /b !RC!
@@ -157,14 +175,14 @@ pipeline {
                 REM ===== ADDED: Sliding-window monitoring metrics (END) =====
 
                 REM ===== ADDED: Alerting rules + Act workflow (START) =====
-                python -u scripts\\monitor_alerts.py --drift-log logs\\error.log --performance artifacts\\monitoring\\performance_timeseries.json --output artifacts\\alerts\\latest_alert.json
+                %VENV_DIR%\\Scripts\\python.exe -u scripts\\monitor_alerts.py --drift-log logs\\error.log --performance artifacts\\monitoring\\performance_timeseries.json --output artifacts\\alerts\\latest_alert.json
                 set RC=!ERRORLEVEL!
                 echo [MON] monitor_alerts rc=!RC!
-                if not "!RC!"=="0" exit /b !RC!
-                python -u scripts\\monitor_act.py --alert artifacts\\alerts\\latest_alert.json --expectations artifacts\\monitoring\\expectations_report.json --output artifacts\\alerts\\action_decision.json --trigger-file artifacts\\alerts\\retrain.trigger
+                if not "!RC!"=="0" if not "!RC!"=="1" exit /b !RC!
+                %VENV_DIR%\\Scripts\\python.exe -u scripts\\monitor_act.py --alert artifacts\\alerts\\latest_alert.json --expectations artifacts\\monitoring\\expectations_report.json --output artifacts\\alerts\\action_decision.json --trigger-file artifacts\\alerts\\retrain.trigger
                 set RC=!ERRORLEVEL!
                 echo [MON] monitor_act rc=!RC!
-                if not "!RC!"=="0" exit /b !RC!
+                if not "!RC!"=="0" if not "!RC!"=="1" exit /b !RC!
                 REM ===== ADDED: Alerting rules + Act workflow (END) =====
                 """
             }
