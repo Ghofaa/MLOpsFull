@@ -31,12 +31,20 @@ def local_path_from_uri(uri: str) -> Path:
     if parsed.netloc:
         uri_path = unquote(parsed.netloc + parsed.path)
         if len(parsed.netloc) >= 2 and parsed.netloc[1] == ":":
+<<<<<<< HEAD
             return Path(uri_path.replace("/", "\\"))
+=======
+            return PureWindowsPath(uri_path.replace("/", "\\"))
+>>>>>>> parent of 124cddf (Fix Windows artifact path handling in checkpoint lookup)
         return Path(uri_path)
 
     path = unquote(parsed.path)
     if len(path) >= 3 and path[0] == "/" and path[2] == ":":
+<<<<<<< HEAD
         return Path(path[1:].replace("/", "\\"))
+=======
+        return PureWindowsPath(path[1:].replace("/", "\\"))
+>>>>>>> parent of 124cddf (Fix Windows artifact path handling in checkpoint lookup)
     return Path(path)
 
 

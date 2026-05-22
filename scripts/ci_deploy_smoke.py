@@ -45,7 +45,7 @@ def wait_for_service(base_url: str, attempts: int = 90, delay: float = 2.0) -> N
 
 def start_fastapi_server(run_id: str, host: str, port: int, threshold: float) -> subprocess.Popen:
     env = os.environ.copy()
-    env.setdefault("GITHUB_USERNAME", "ci-user")
+    env.setdefault("GITHUB_USERNAME", "Ghofaa")
     repo_root = str(Path(__file__).resolve().parents[1])
     env["PYTHONPATH"] = repo_root
     command = [
@@ -68,7 +68,7 @@ def start_ray_serve(run_id: str, host: str, port: int, threshold: float) -> subp
 
     from madewithml.serve import ModelDeployment
 
-    os.environ.setdefault("GITHUB_USERNAME", "ci-user")
+    os.environ.setdefault("GITHUB_USERNAME", "Ghofaa")
     ray.init(ignore_reinit_error=True, num_cpus=1, num_gpus=0, include_dashboard=False)
     serve.start(detached=False, http_options={"host": host, "port": port})
     serve.run(ModelDeployment.bind(run_id=run_id, threshold=threshold), route_prefix="/")

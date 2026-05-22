@@ -16,7 +16,7 @@ pipeline {    agent any
     environment {
         PYTHON = 'python'
         VENV_DIR = 'venv'
-        GITHUB_USERNAME = 'ci-user'
+        GITHUB_USERNAME = 'Ghofaa'
         RESULTS_DIR = 'artifacts'
         F1_THRESHOLD = '0.15'
         CI_NUM_SAMPLES = '100'

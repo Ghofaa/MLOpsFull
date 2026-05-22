@@ -63,7 +63,7 @@ def main() -> int:
             num_gpus=0,
             include_dashboard=False,
             object_store_memory=200 * 1024 * 1024,
-            runtime_env={"env_vars": {"GITHUB_USERNAME": os.environ.get("GITHUB_USERNAME", "ci-user")}},
+            runtime_env={"env_vars": {"GITHUB_USERNAME": os.environ.get("GITHUB_USERNAME", "Ghofaa")}},
         )
         # ===== ADDED: Force CPU-only Ray init for Jenkins Windows agent (END) =====
 
