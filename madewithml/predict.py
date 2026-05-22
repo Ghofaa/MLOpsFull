@@ -31,12 +31,12 @@ def local_path_from_uri(uri: str) -> Path:
     if parsed.netloc:
         uri_path = unquote(parsed.netloc + parsed.path)
         if len(parsed.netloc) >= 2 and parsed.netloc[1] == ":":
-            return PureWindowsPath(uri_path.replace("/", "\\"))
+            return Path(PureWindowsPath(uri_path.replace("/", "\\")))
         return Path(uri_path)
 
     path = unquote(parsed.path)
     if len(path) >= 3 and path[0] == "/" and path[2] == ":":
-        return PureWindowsPath(path[1:].replace("/", "\\"))
+        return Path(PureWindowsPath(path[1:].replace("/", "\\")))
     return Path(path)
 
 
