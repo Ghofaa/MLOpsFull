@@ -184,7 +184,7 @@ def train_model(
         ray.air.result.Result: training results.
     """
     # Set up
-    train_loop_config = json.loads(train_loop_config)
+    train_loop_config = utils.parse_config_json(train_loop_config)
     train_loop_config["num_samples"] = num_samples
     train_loop_config["num_epochs"] = num_epochs
     train_loop_config["batch_size"] = batch_size
@@ -215,7 +215,13 @@ def train_model(
     run_config = RunConfig(callbacks=[mlflow_callback], checkpoint_config=checkpoint_config, storage_path=EFS_DIR, local_dir=EFS_DIR)
 
     # Dataset
-    ds = data.load_data(dataset_loc=dataset_loc, num_samples=train_loop_config["num_samples"])
+    num_samples = train_loop_config["num_samples"]
+    if num_samples is not None and num_samples < 50:
+        logger.warning(
+            f"num_samples={num_samples} is small; using at least 50 samples so stratified splitting is stable."
+        )
+        num_samples = max(num_samples, 50)
+    ds = data.load_data(dataset_loc=dataset_loc, num_samples=num_samples)
     train_ds, val_ds = data.stratify_split(ds, stratify="tag", test_size=0.2)
     tags = train_ds.unique(column="tag")
     train_loop_config["num_classes"] = len(tags)
@@ -258,6 +264,7 @@ def train_model(
 
 
 if __name__ == "__main__":  # pragma: no cover, application
+    os.environ.setdefault("GITHUB_USERNAME", "local-user")
     if ray.is_initialized():
         ray.shutdown()
     ray.init(runtime_env={"env_vars": {"GITHUB_USERNAME": os.environ["GITHUB_USERNAME"]}})

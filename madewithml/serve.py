@@ -391,8 +391,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
     os.environ.setdefault("GITHUB_USERNAME", "local-user")
     ray.init(
+        num_cpus=1,
         num_gpus=0,
         include_dashboard=False,
+        ignore_reinit_error=True,
+        object_store_memory=200 * 1024 * 1024,
         runtime_env={"env_vars": {"GITHUB_USERNAME": os.environ["GITHUB_USERNAME"]}},
     )
     if args.backend == "ray-serve":

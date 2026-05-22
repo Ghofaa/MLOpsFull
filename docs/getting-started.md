@@ -34,7 +34,7 @@ export GITHUB_USERNAME=your-username
 ## Train
 
 ```bash
-python -m madewithml.train train-model \
+python -m madewithml.train \
   --experiment-name my-experiment \
   --dataset-loc datasets/dataset.csv \
   --num-samples 256 \
@@ -48,7 +48,7 @@ Training logs the MLflow `run_id` in the results JSON. Use that ID for evaluatio
 ## Evaluate
 
 ```bash
-python -m madewithml.evaluate evaluate \
+python -m madewithml.evaluate \
   --run-id <run_id> \
   --dataset-loc datasets/holdout.csv \
   --results-fp artifacts/eval_results.json

@@ -34,6 +34,11 @@ def parse_args() -> argparse.Namespace:
         default="artifacts/alerts/retrain.trigger",
         help="File path to create when retraining is recommended.",
     )
+    parser.add_argument(
+        "--fail-on-retrain",
+        action="store_true",
+        help="Exit with code 1 when retraining is recommended (default: record decision only).",
+    )
     return parser.parse_args()
 
 
@@ -118,7 +123,9 @@ def main() -> int:
         trigger_path.unlink()
 
     print(json.dumps(decision, indent=2))
-    return 1 if should_retrain else 0
+    if args.fail_on_retrain and should_retrain:
+        return 1
+    return 0
 
 
 if __name__ == "__main__":

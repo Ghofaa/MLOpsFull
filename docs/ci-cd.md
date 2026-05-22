@@ -72,7 +72,7 @@ Each build archives:
 | `CI_NUM_SAMPLES` | `256` | Training sample size for CI |
 | `CI_NUM_EPOCHS` | `3` | Epochs for CI training |
 | `CI_BATCH_SIZE` | `16` | Batch size for CI training |
-| `GITHUB_USERNAME` | `ci-user` | Ray runtime env fallback in CI |
+| `GITHUB_USERNAME` | `Ghofaa` | Ray runtime env; Jenkins operator / repo owner |
 
 ## Continual learning
 

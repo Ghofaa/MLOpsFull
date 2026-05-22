@@ -1,7 +1,8 @@
 import json
 import os
 import random
-from typing import Any, Dict, List
+import re
+from typing import Any, Dict, List, Optional
 
 import numpy as np
 import torch
@@ -22,6 +23,48 @@ def set_seeds(seed: int = 42):
     eval("setattr(torch.backends.cudnn, 'deterministic', True)")
     eval("setattr(torch.backends.cudnn, 'benchmark', False)")
     os.environ["PYTHONHASHSEED"] = str(seed)
+
+
+DEFAULT_TRAIN_LOOP_CONFIG = {
+    "dropout_p": 0.5,
+    "lr": 1e-4,
+    "lr_factor": 0.8,
+    "lr_patience": 3,
+}
+
+
+def parse_config_json(value: Optional[str], default: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    """Parse a JSON config string from CLI arguments.
+
+    Windows PowerShell often strips double quotes from inline JSON, producing
+    strings like ``{dropout_p:0.5,lr:1e-4}``. This helper accepts valid JSON and
+    repairs that common mangled format before raising.
+    """
+    fallback = dict(default if default is not None else DEFAULT_TRAIN_LOOP_CONFIG)
+    if value is None or not str(value).strip():
+        return fallback
+
+    raw = str(value).strip()
+    candidates = [raw]
+    if raw.startswith("{") and '"' not in raw:
+        candidates.append(re.sub(r"([{,]\s*)([a-zA-Z_][a-zA-Z0-9_]*)\s*:", r'\1"\2":', raw))
+
+    last_error: Optional[json.JSONDecodeError] = None
+    for candidate in candidates:
+        try:
+            parsed = json.loads(candidate)
+            if not isinstance(parsed, dict):
+                raise ValueError(f"Expected a JSON object, got {type(parsed).__name__}.")
+            return parsed
+        except json.JSONDecodeError as exc:
+            last_error = exc
+
+    raise ValueError(
+        f"Invalid JSON config: {raw!r}. "
+        "On PowerShell, set a variable with escaped quotes, e.g. "
+        '$config = ''{"dropout_p":0.5,"lr":1e-4,"lr_factor":0.8,"lr_patience":3}'' '
+        "or omit --train-loop-config to use defaults."
+    ) from last_error
 
 
 def load_dict(path: str) -> Dict:
