@@ -8,7 +8,7 @@ import ray
 import ray.train.torch  # NOQA: F401 (imported but unused)
 import typer
 from ray.data import Dataset
-from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 from snorkel.slicing import PandasSFApplier, slicing_function
 from typing_extensions import Annotated
 
@@ -32,6 +32,7 @@ def get_overall_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> Dict:  # prag
     """
     metrics = precision_recall_fscore_support(y_true, y_pred, average="weighted")
     overall_metrics = {
+        "accuracy": float(accuracy_score(y_true, y_pred)),
         "precision": metrics[0],
         "recall": metrics[1],
         "f1": metrics[2],

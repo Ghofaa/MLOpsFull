@@ -2,7 +2,7 @@ import datetime
 import json
 import os
 import tempfile
-from typing import Tuple
+from typing import Dict, List, Tuple
 
 import numpy as np
 import ray
@@ -31,6 +31,18 @@ from madewithml.models import FinetunedLLM
 
 # Initialize Typer CLI app
 app = typer.Typer()
+
+
+def class_weights_for_tags(train_ds: Dataset, class_to_index: Dict[str, int]) -> List[float]:
+    """Inverse-frequency weights per class index for BCEWithLogitsLoss pos_weight."""
+    df = train_ds.select_columns(["tag"]).to_pandas()
+    n = len(df)
+    k = len(class_to_index)
+    weights: List[float] = []
+    for tag in sorted(class_to_index, key=class_to_index.get):
+        count = int((df["tag"] == tag).sum())
+        weights.append(n / (k * count) if count > 0 else 1.0)
+    return weights
 
 
 def train_step(
@@ -124,7 +136,13 @@ def train_loop_per_worker(config: dict) -> None:  # pragma: no cover, tested via
     model = train.torch.prepare_model(model)
 
     # Training components
-    loss_fn = nn.BCEWithLogitsLoss()
+    class_weights = config.get("class_weights")
+    if class_weights:
+        device = next(model.parameters()).device
+        pos_weight = torch.tensor(class_weights, dtype=torch.float32, device=device)
+        loss_fn = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
+    else:
+        loss_fn = nn.BCEWithLogitsLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode="min", factor=lr_factor, patience=lr_patience)
 
@@ -233,6 +251,7 @@ def train_model(
     # Preprocess
     preprocessor = data.CustomPreprocessor()
     preprocessor = preprocessor.fit(train_ds)
+    train_loop_config["class_weights"] = class_weights_for_tags(train_ds, preprocessor.class_to_index)
     train_ds = preprocessor.transform(train_ds)
     val_ds = preprocessor.transform(val_ds)
     train_ds = train_ds.materialize()

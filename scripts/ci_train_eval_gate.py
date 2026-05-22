@@ -47,7 +47,7 @@ def main() -> int:
 
     # Keep config intentionally small for CI speed.
     train_loop_config = {
-        "dropout_p": 0.5,
+        "dropout_p": 0.3,
         "lr": 1e-4,
         "lr_factor": 0.8,
         "lr_patience": 1,
@@ -89,12 +89,16 @@ def main() -> int:
             dataset_loc=args.holdout,
             results_fp=str(eval_results_fp),
         )
-        f1 = float(eval_metrics["overall"]["f1"])
+        overall = eval_metrics["overall"]
+        f1 = float(overall["f1"])
         passed = f1 >= args.f1_threshold
 
         summary = {
             "experiment_name": experiment_name,
             "run_id": run_id,
+            "accuracy": float(overall["accuracy"]),
+            "precision": float(overall["precision"]),
+            "recall": float(overall["recall"]),
             "f1": f1,
             "threshold": args.f1_threshold,
             "passed": passed,

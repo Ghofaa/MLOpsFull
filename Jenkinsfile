@@ -18,9 +18,9 @@ pipeline {    agent any
         VENV_DIR = 'venv'
         GITHUB_USERNAME = 'Ghofaa'
         RESULTS_DIR = 'artifacts'
-        F1_THRESHOLD = '0.15'
-        CI_NUM_SAMPLES = '100'
-        CI_NUM_EPOCHS = '1'
+        F1_THRESHOLD = '0.30'
+        CI_NUM_SAMPLES = '256'
+        CI_NUM_EPOCHS = '3'
         CI_BATCH_SIZE = '16'
     }
     stages {
