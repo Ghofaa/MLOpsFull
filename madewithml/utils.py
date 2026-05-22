@@ -14,6 +14,36 @@ from madewithml.config import mlflow
 DatasetContext.get_current().execution_options.preserve_order = True
 
 
+def configure_hf_ssl() -> None:
+    """Allow Hugging Face downloads on hosts with broken corporate SSL (local dev only)."""
+    if os.getenv("MLOPS_INSECURE_SSL", "").lower() not in {"1", "true", "yes"}:
+        return
+
+    import ssl
+
+    ssl._create_default_https_context = ssl._create_unverified_context
+
+    try:
+        import urllib3
+
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+    except Exception:
+        pass
+
+    try:
+        import requests
+
+        _orig_request = requests.Session.request
+
+        def _request(self, method, url, **kwargs):
+            kwargs.setdefault("verify", False)
+            return _orig_request(self, method, url, **kwargs)
+
+        requests.Session.request = _request  # type: ignore[method-assign]
+    except Exception:
+        pass
+
+
 def set_seeds(seed: int = 42):
     """Set seeds for reproducibility."""
     np.random.seed(seed)

@@ -2,6 +2,10 @@ import argparse
 import datetime
 import json
 import os
+
+from madewithml.utils import configure_hf_ssl
+
+configure_hf_ssl()
 import time
 from http import HTTPStatus
 from pathlib import Path

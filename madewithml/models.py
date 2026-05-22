@@ -7,6 +7,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from transformers import BertModel
 
+from madewithml.utils import configure_hf_ssl
+
 
 class FinetunedLLM(nn.Module):
     def __init__(self, llm, dropout_p, embedding_dim, num_classes):
@@ -51,6 +53,7 @@ class FinetunedLLM(nn.Module):
 
     @classmethod
     def load(cls, args_fp, state_dict_fp):
+        configure_hf_ssl()
         with open(args_fp, "r") as fp:
             kwargs = json.load(fp=fp)
         llm = BertModel.from_pretrained("allenai/scibert_scivocab_uncased", return_dict=False)

@@ -9,6 +9,7 @@ from sklearn.model_selection import train_test_split
 from transformers import BertTokenizer
 
 from madewithml.config import STOPWORDS
+from madewithml.utils import configure_hf_ssl
 
 
 def load_data(dataset_loc: str, num_samples: int = None) -> Dataset:
@@ -120,6 +121,7 @@ def tokenize(batch: Dict) -> Dict:
     Returns:
         Dict: batch of data with the results of tokenization (`input_ids` and `attention_mask`) on the text inputs.
     """
+    configure_hf_ssl()
     tokenizer = BertTokenizer.from_pretrained("allenai/scibert_scivocab_uncased", return_dict=False)
     encoded_inputs = tokenizer(batch["text"].tolist(), return_tensors="np", padding="longest")
     return dict(ids=encoded_inputs["input_ids"], masks=encoded_inputs["attention_mask"], targets=np.array(batch["tag"]))

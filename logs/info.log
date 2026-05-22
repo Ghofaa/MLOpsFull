@@ -839,3 +839,456 @@ Drift detectors initialized (KSDrift + ChiSquareDrift) with 764 reference points
 INFO 2026-05-22 11:56:57,241 [root:serve.py:_log_request_metrics:190]
 {"event": "request_metrics", "timestamp": "2026-05-22T10:56:57.241608", "endpoint": "/predict/", "run_id": "5730f491087f4edf9cb0a3106a899396", "status": "ok", "http_status": 200, "latency_ms": 404.87}
 
+INFO 2026-05-22 14:56:06,205 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000018D978965F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 14:56:06,206 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] Le chemin d’accès spécifié est introuvable: '/dev/vfio'
+
+WARNING 2026-05-22 14:56:12,629 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: 1b2e77c1-c628-426b-b21b-0a72fb74da42)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 14:56:12,631 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+WARNING 2026-05-22 14:56:13,788 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: 5b4a765e-70a7-4bee-8dd9-2b17e2bcea8b)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 14:56:13,792 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 2s [Retry 2/5].
+
+WARNING 2026-05-22 14:56:15,937 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: 8d8d3685-0e52-4612-a8ec-dd2802602b31)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 14:56:15,939 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 4s [Retry 3/5].
+
+WARNING 2026-05-22 14:56:20,136 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: 80186a6c-1417-4e94-8f6a-bfc4b4daf513)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 14:56:20,138 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 4/5].
+
+WARNING 2026-05-22 14:56:28,319 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: 943ca097-a44d-4a4e-b810-ce7c82cf44d7)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 14:56:28,320 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 5/5].
+
+WARNING 2026-05-22 14:56:36,467 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: 7d55e749-53ab-4bf6-8e3c-71dd0acc573c)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+INFO 2026-05-22 15:05:30,492 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000259B6C654B0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 15:05:30,493 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] Le chemin d’accès spécifié est introuvable: '/dev/vfio'
+
+WARNING 2026-05-22 15:05:37,737 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: 9bb1d348-7fdc-4050-8edd-960d13198553)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 15:05:37,739 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+WARNING 2026-05-22 15:05:38,943 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: af480549-022b-423d-97a2-91ab24b4e2a8)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 15:05:38,947 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 2s [Retry 2/5].
+
+WARNING 2026-05-22 15:05:41,345 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: f1c2fdec-8859-4aaf-b0ab-e91e9a17e9e2)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 15:05:41,348 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 4s [Retry 3/5].
+
+WARNING 2026-05-22 15:05:45,627 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: b366525d-63f0-4032-bcf7-c017bb359298)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 15:05:45,633 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 4/5].
+
+WARNING 2026-05-22 15:05:53,895 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: ea62bd0d-f67f-4643-8a6e-c16851227c32)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 15:05:53,898 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 5/5].
+
+WARNING 2026-05-22 15:06:02,069 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: 09bb572f-1acc-46fe-89f6-2e8da738a3d0)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+INFO 2026-05-22 15:10:01,452 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022F25FDD750>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 15:10:01,454 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] Le chemin d’accès spécifié est introuvable: '/dev/vfio'
+
+WARNING 2026-05-22 15:10:08,783 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: c96d65da-a027-4703-9fa9-989b83ea6c15)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 15:10:08,786 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+WARNING 2026-05-22 15:10:09,964 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: f1e4449b-c9f7-435c-9554-374715864edd)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 15:10:09,968 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 2s [Retry 2/5].
+
+WARNING 2026-05-22 15:10:12,146 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: 48d0040c-2799-431f-a673-30a6bf1f0be9)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 15:10:12,149 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 4s [Retry 3/5].
+
+WARNING 2026-05-22 15:10:16,306 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: b0920b5b-7664-4fdc-810d-b67e570ace34)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 15:10:16,310 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 4/5].
+
+WARNING 2026-05-22 15:10:24,498 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: 500d97dd-db4d-412c-bbcc-b3dfecc3c0eb)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+WARNING 2026-05-22 15:10:24,502 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 5/5].
+
+WARNING 2026-05-22 15:10:32,750 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/config.json (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1007)')))"), '(Request ID: c636d214-8069-4537-9f41-56942a8d7cd8)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/config.json
+
+INFO 2026-05-22 15:11:54,349 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000026A9C8FFB50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 15:11:54,351 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] Le chemin d’accès spécifié est introuvable: '/dev/vfio'
+
+INFO 2026-05-22 15:12:06,454 [root:serve.py:__init__:81]
+Drift detectors initialized (KSDrift + ChiSquareDrift) with 764 reference points.
+
+WARNING 2026-05-22 15:16:49,565 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 6ee88ee1-8f35-48bb-a638-227924637e78)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 15:16:49,568 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+INFO 2026-05-22 15:16:51,694 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:16:51.694232", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 12163.63}
+
+INFO 2026-05-22 15:16:52,788 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:16:52.788056", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 560.08}
+
+INFO 2026-05-22 15:16:53,856 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:16:53.856759", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 526.56}
+
+INFO 2026-05-22 15:16:54,891 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:16:54.891687", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 505.82}
+
+INFO 2026-05-22 15:16:55,851 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:16:55.851736", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 431.83}
+
+INFO 2026-05-22 15:16:56,871 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:16:56.871685", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 487.32}
+
+INFO 2026-05-22 15:16:57,986 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:16:57.986866", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 577.66}
+
+WARNING 2026-05-22 15:16:58,504 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T14:16:58.504116", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [3.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 15:16:58,928 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:16:58.928084", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 426.0}
+
+INFO 2026-05-22 15:16:59,904 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:16:59.904207", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 452.5}
+
+INFO 2026-05-22 15:17:01,065 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:01.065159", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 627.37}
+
+WARNING 2026-05-22 15:17:01,609 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T14:17:01.608089", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.005235602147877216], "ks_distance": [0.9973822236061096], "chi_is_drift": 0, "chi_p_val": [0.2662929594516754], "chi_distance": [2.6463162899017334], "incoming_token_counts": [42.0], "incoming_buckets": ["large"]}
+
+INFO 2026-05-22 15:17:02,135 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:02.135972", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 540.92}
+
+INFO 2026-05-22 15:17:03,108 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:03.108370", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 446.25}
+
+INFO 2026-05-22 15:17:04,031 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:04.031003", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 393.64}
+
+INFO 2026-05-22 15:17:05,027 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:05.027822", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 468.41}
+
+INFO 2026-05-22 15:17:06,083 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:06.083627", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 528.72}
+
+INFO 2026-05-22 15:17:07,102 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:07.102034", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 492.67}
+
+WARNING 2026-05-22 15:17:07,652 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T14:17:07.645070", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [3.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 15:17:08,101 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:08.101860", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 462.19}
+
+INFO 2026-05-22 15:17:09,072 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:09.072030", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 434.39}
+
+INFO 2026-05-22 15:17:10,077 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:10.077980", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 474.64}
+
+WARNING 2026-05-22 15:17:10,613 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T14:17:10.613149", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [3.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 15:17:11,078 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:11.078546", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 468.48}
+
+INFO 2026-05-22 15:17:12,135 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:12.135229", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 515.32}
+
+WARNING 2026-05-22 15:17:12,656 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T14:17:12.656615", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [3.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 15:17:13,112 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:13.112040", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 457.9}
+
+WARNING 2026-05-22 15:17:13,654 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T14:17:13.653760", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.005235602147877216], "ks_distance": [0.9973822236061096], "chi_is_drift": 0, "chi_p_val": [0.2662929594516754], "chi_distance": [2.6463162899017334], "incoming_token_counts": [42.0], "incoming_buckets": ["large"]}
+
+INFO 2026-05-22 15:17:14,127 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:14.127949", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 477.38}
+
+INFO 2026-05-22 15:17:15,055 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:15.055777", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 405.5}
+
+INFO 2026-05-22 15:17:15,996 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:15.996853", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 405.17}
+
+INFO 2026-05-22 15:17:16,922 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:16.922543", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 406.83}
+
+INFO 2026-05-22 15:17:17,976 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:17.976338", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 527.7}
+
+INFO 2026-05-22 15:17:18,914 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:18.914635", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 407.14}
+
+INFO 2026-05-22 15:17:19,866 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:19.866381", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 423.56}
+
+WARNING 2026-05-22 15:17:20,401 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T14:17:20.399410", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.005235602147877216], "ks_distance": [0.9973822236061096], "chi_is_drift": 0, "chi_p_val": [0.2662929594516754], "chi_distance": [2.6463162899017334], "incoming_token_counts": [42.0], "incoming_buckets": ["large"]}
+
+INFO 2026-05-22 15:17:20,959 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:20.959728", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 566.91}
+
+WARNING 2026-05-22 15:17:21,498 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T14:17:21.496813", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [2.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 15:17:21,992 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:21.992747", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 501.75}
+
+INFO 2026-05-22 15:17:23,016 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:23.016195", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 494.65}
+
+INFO 2026-05-22 15:17:24,038 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:24.037245", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 499.18}
+
+INFO 2026-05-22 15:17:25,013 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:25.013779", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 448.77}
+
+WARNING 2026-05-22 15:17:25,538 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T14:17:25.538392", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [2.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 15:17:25,964 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:25.964735", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 427.78}
+
+INFO 2026-05-22 15:17:26,898 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:26.897386", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 408.49}
+
+INFO 2026-05-22 15:17:27,873 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:27.873641", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 445.11}
+
+WARNING 2026-05-22 15:17:28,407 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T14:17:28.406150", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.005235602147877216], "ks_distance": [0.9973822236061096], "chi_is_drift": 0, "chi_p_val": [0.2662929594516754], "chi_distance": [2.6463162899017334], "incoming_token_counts": [42.0], "incoming_buckets": ["large"]}
+
+INFO 2026-05-22 15:17:28,843 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:28.843858", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 441.29}
+
+INFO 2026-05-22 15:17:29,816 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:29.816295", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 430.59}
+
+WARNING 2026-05-22 15:17:30,345 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T14:17:30.343631", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [2.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 15:17:30,830 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T14:17:30.830408", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 491.5}
+
+INFO 2026-05-22 18:36:39,203 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002A347096FB0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 18:36:39,204 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] Le chemin d’accès spécifié est introuvable: '/dev/vfio'
+
+INFO 2026-05-22 18:36:51,022 [root:serve.py:__init__:81]
+Drift detectors initialized (KSDrift + ChiSquareDrift) with 764 reference points.
+
+WARNING 2026-05-22 18:37:46,244 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: dd577544-24eb-4a8f-8498-e6280a80d051)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 18:37:46,246 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+INFO 2026-05-22 18:37:51,031 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:37:51.029783", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 14972.02}
+
+INFO 2026-05-22 18:37:52,342 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:37:52.342741", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 748.22}
+
+INFO 2026-05-22 18:37:53,742 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:37:53.742813", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 852.95}
+
+INFO 2026-05-22 18:37:55,051 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:37:55.050245", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 756.96}
+
+INFO 2026-05-22 18:37:56,727 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:37:56.727255", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 1134.01}
+
+INFO 2026-05-22 18:37:58,229 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:37:58.229518", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 954.23}
+
+INFO 2026-05-22 18:38:00,853 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:00.851669", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 2078.99}
+
+WARNING 2026-05-22 18:38:01,398 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T17:38:01.396228", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [3.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 18:38:02,092 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:02.091655", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 701.02}
+
+INFO 2026-05-22 18:38:03,824 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:03.823809", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 1152.38}
+
+INFO 2026-05-22 18:38:05,145 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:05.145422", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 778.93}
+
+WARNING 2026-05-22 18:38:05,705 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T17:38:05.702066", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.005235602147877216], "ks_distance": [0.9973822236061096], "chi_is_drift": 0, "chi_p_val": [0.2662929594516754], "chi_distance": [2.6463162899017334], "incoming_token_counts": [42.0], "incoming_buckets": ["large"]}
+
+INFO 2026-05-22 18:38:06,523 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:06.521993", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 825.41}
+
+INFO 2026-05-22 18:38:07,699 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:07.699042", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 653.22}
+
+INFO 2026-05-22 18:38:08,860 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:08.859456", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 630.11}
+
+INFO 2026-05-22 18:38:10,671 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:10.671444", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 1257.27}
+
+INFO 2026-05-22 18:38:11,902 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:11.902840", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 701.7}
+
+INFO 2026-05-22 18:38:13,101 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:13.101041", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 668.25}
+
+WARNING 2026-05-22 18:38:13,645 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T17:38:13.644368", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [3.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 18:38:14,141 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:14.140594", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 501.8}
+
+INFO 2026-05-22 18:38:15,193 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:15.193094", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 519.6}
+
+INFO 2026-05-22 18:38:16,269 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:16.269275", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 538.71}
+
+WARNING 2026-05-22 18:38:16,806 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T17:38:16.805320", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [3.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 18:38:17,530 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:17.530658", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 727.21}
+
+INFO 2026-05-22 18:38:18,541 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:18.541742", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 480.89}
+
+WARNING 2026-05-22 18:38:19,135 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T17:38:19.131455", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [3.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 18:38:20,725 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:20.724841", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 1596.61}
+
+WARNING 2026-05-22 18:38:21,257 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T17:38:21.254894", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.005235602147877216], "ks_distance": [0.9973822236061096], "chi_is_drift": 0, "chi_p_val": [0.2662929594516754], "chi_distance": [2.6463162899017334], "incoming_token_counts": [42.0], "incoming_buckets": ["large"]}
+
+INFO 2026-05-22 18:38:21,874 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:21.874151", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 625.78}
+
+INFO 2026-05-22 18:38:23,278 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:23.278026", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 869.41}
+
+INFO 2026-05-22 18:38:24,369 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:24.369329", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 558.66}
+
+INFO 2026-05-22 18:38:25,409 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:25.409154", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 514.99}
+
+INFO 2026-05-22 18:38:26,532 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:26.531891", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 593.93}
+
+INFO 2026-05-22 18:38:27,526 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:27.526544", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 465.69}
+
+INFO 2026-05-22 18:38:28,540 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:28.540218", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 486.62}
+
+WARNING 2026-05-22 18:38:29,090 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T17:38:29.088871", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.005235602147877216], "ks_distance": [0.9973822236061096], "chi_is_drift": 0, "chi_p_val": [0.2662929594516754], "chi_distance": [2.6463162899017334], "incoming_token_counts": [42.0], "incoming_buckets": ["large"]}
+
+INFO 2026-05-22 18:38:30,204 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:30.204679", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 1126.08}
+
+WARNING 2026-05-22 18:38:30,741 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T17:38:30.741602", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [2.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 18:38:31,369 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:31.369872", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 631.15}
+
+INFO 2026-05-22 18:38:32,358 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:32.358441", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 467.58}
+
+INFO 2026-05-22 18:38:33,327 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:33.327325", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 438.62}
+
+INFO 2026-05-22 18:38:34,472 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:34.472753", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 617.88}
+
+WARNING 2026-05-22 18:38:35,006 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T17:38:35.004227", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [2.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 18:38:35,477 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:35.477302", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 476.07}
+
+INFO 2026-05-22 18:38:36,487 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:36.487752", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 481.76}
+
+INFO 2026-05-22 18:38:37,478 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:37.477738", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 463.41}
+
+WARNING 2026-05-22 18:38:38,025 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T17:38:38.023647", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.005235602147877216], "ks_distance": [0.9973822236061096], "chi_is_drift": 0, "chi_p_val": [0.2662929594516754], "chi_distance": [2.6463162899017334], "incoming_token_counts": [42.0], "incoming_buckets": ["large"]}
+
+INFO 2026-05-22 18:38:38,963 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:38.963633", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 948.45}
+
+INFO 2026-05-22 18:38:42,573 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:42.573137", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 3042.14}
+
+WARNING 2026-05-22 18:38:43,158 [root:serve.py:monitor_drift:164]
+{"event": "drift_alert", "timestamp": "2026-05-22T17:38:43.151838", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "ks_is_drift": 1, "ks_p_val": [0.0], "ks_distance": [1.0], "chi_is_drift": 0, "chi_p_val": [0.012939700856804848], "chi_distance": [8.694910049438477], "incoming_token_counts": [2.0], "incoming_buckets": ["small"]}
+
+INFO 2026-05-22 18:38:44,206 [root:serve.py:_log_request_metrics:194]
+{"event": "request_metrics", "timestamp": "2026-05-22T17:38:44.206952", "endpoint": "/predict/", "run_id": "ed39a69df764434b98dfefd28ac4feb1", "status": "ok", "http_status": 200, "latency_ms": 1061.47}
+
