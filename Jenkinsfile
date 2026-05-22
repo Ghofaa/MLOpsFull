@@ -104,7 +104,7 @@ pipeline {
                 bat """
                 call %VENV_DIR%\\Scripts\\activate
                 set PYTHONPATH=%CD%
-                python scripts\\ci_deploy_smoke.py --summary artifacts\\quality_gate_summary.json --report artifacts\\deploy_smoke.json
+                python scripts\\ci_deploy_smoke.py --summary artifacts\\quality_gate_summary.json --report artifacts\\deploy_smoke.json --metrics-report artifacts\\metrics_smoke.txt --backend fastapi
                 if errorlevel 1 exit /b 1
                 mkdocs build --strict
                 if errorlevel 1 exit /b 1
@@ -173,7 +173,7 @@ pipeline {
     post {
         always {
             // ===== ADDED: Archive gate outputs for review (START) =====
-            archiveArtifacts artifacts: 'Jenkinsfile, requirements.txt, artifacts/*.json, artifacts/monitoring/*.json, artifacts/alerts/*.json, site/**', allowEmptyArchive: true            
+            archiveArtifacts artifacts: 'Jenkinsfile, requirements.txt, artifacts/*.json, artifacts/*.txt, artifacts/monitoring/*.json, artifacts/alerts/*.json, site/**', allowEmptyArchive: true            
             // ===== ADDED: Archive gate outputs for review (END) =====
         }
         success {

@@ -1,41 +1,59 @@
 # Monitoring
 
-Production monitoring is implemented in the serving layer through centralized logging and statistical drift detection.
+Production monitoring uses **three layers**: Prometheus metrics, structured logs, and Jenkins batch monitoring scripts.
 
-## Logging
+## Prometheus and Grafana
+
+The API exposes Prometheus metrics at `GET /metrics` (see `madewithml/monitoring_metrics.py`).
+
+Start the observability stack:
+
+```powershell
+docker compose up -d prometheus grafana
+```
+
+Open Grafana at `http://localhost:3000` (admin / admin). Dashboard: **MLOps → MLOpsFull API And Model Monitoring**.
+
+Generate traffic:
+
+```powershell
+python scripts/send_monitoring_traffic.py --url http://localhost:8000/predict/ --requests 50
+```
+
+## Logging and Alibi drift
 
 Logging is configured in `madewithml/config.py`:
 
 | Log file | Level | Purpose |
 |---|---|---|
-| `logs/info.log` | INFO | General runtime events |
+| `logs/info.log` | INFO | General runtime and `request_metrics` events |
 | `logs/error.log` | ERROR / warnings | Errors and drift alerts |
 
-Logs use rotating file handlers (10 MB max, 10 backups).
+On startup, `madewithml/serve.py` initializes **KSDrift** and **ChiSquareDrift** from `datasets/dataset.csv` (or `X_train_reference.npy`). Each `/predict/` request runs drift checks; alerts are appended to `logs/error.log` without blocking inference.
 
-## Drift detection
+## Jenkins monitoring stages (main branch)
 
-On service startup, `madewithml/serve.py` loads a reference baseline from `X_train_reference.npy` and initializes an Alibi Detect `KSDrift` detector (`p_val=0.01`).
+After the quality gate on `main`:
 
-For each `/predict/` request:
+| Script | Output |
+|--------|--------|
+| `monitor_expectations.py` | `artifacts/monitoring/expectations_report.json` |
+| `monitor_sliding_metrics.py` | `artifacts/monitoring/performance_timeseries.json` |
+| `monitor_alerts.py` | `artifacts/alerts/latest_alert.json` |
+| `monitor_act.py` | `artifacts/alerts/action_decision.json` |
 
-1. Extract monitoring features (title length, description length)
-2. Run a Kolmogorov-Smirnov test against the reference distribution
-3. If drift is detected, append a warning to `logs/error.log` with timestamp and p-values
-4. Continue serving predictions (monitoring is non-blocking)
+## Prediction monitoring block
 
-If `X_train_reference.npy` is missing, the service starts normally but drift checks are disabled.
+`POST /predict/` includes a `monitoring` summary (class counts, confidence, `other` rate) for dashboards and reports.
+
+## Helpers
+
+`madewithml/monitoring.py` provides validation, summarization, and lightweight drift statistics used in tests and documentation.
 
 ## Operational checklist
 
-1. Confirm drift detector initialization in startup logs
-2. Send prediction requests to `/predict/`
-3. Inspect `logs/error.log` for drift warnings after shifted inputs
-4. Use drift signals to decide whether to investigate, refresh the reference window, or retrain
-
-## Future improvements
-
-- Richer embedding-based drift features
-- Alerting (Slack, email) on sustained drift
-- Automatic retraining trigger from CI/CD
-- Dashboard integration (Grafana, Prometheus)
+1. Start API: `python -m madewithml.serve --run_id <RUN_ID> --backend fastapi`
+2. Confirm `/metrics` returns `mlopsfull_requests_total`
+3. Run traffic script or send manual predictions
+4. Check Grafana panels and `logs/error.log` for drift
+5. Review Jenkins `artifacts/monitoring/` and `artifacts/alerts/` on `main` builds

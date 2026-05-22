@@ -1,0 +1,67 @@
+services:
+  mlopsfull-serve:
+    profiles:
+      - serve
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mlopsfull:local
+    container_name: mlopsfull-serve
+    shm_size: 3g
+    ports:
+      - "8000:8000"
+    environment:
+      GITHUB_USERNAME: ${GITHUB_USERNAME:-local-user}
+      MLOPS_STORAGE_DIR: /mlops-storage
+    volumes:
+      - mlops_storage:/mlops-storage
+    command: python -m madewithml.serve --run_id ${RUN_ID:-missing-run-id} --backend fastapi
+    networks:
+      - mlops_net
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v2.52.0
+    container_name: mlops-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/usr/share/prometheus/console_libraries"
+      - "--web.console.templates=/usr/share/prometheus/consoles"
+    networks:
+      - mlops_net
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:10.4.2
+    container_name: mlops-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on:
+      - prometheus
+    networks:
+      - mlops_net
+    restart: unless-stopped
+
+networks:
+  mlops_net:
+    name: mlopsfull_net
+
+volumes:
+  mlops_storage:
+    name: mlopsfull_storage
+  prometheus_data:
+  grafana_data:

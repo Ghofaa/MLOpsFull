@@ -1,8 +1,10 @@
 import json
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 from typing import Any, Dict, Iterable, List
+from urllib.parse import unquote, urlparse
 
 import numpy as np
+import pandas as pd
 import ray
 import typer
 from numpyencoder import NumpyEncoder
@@ -10,6 +12,7 @@ from ray.air import Result
 from ray.train.torch.torch_checkpoint import TorchCheckpoint
 from typing_extensions import Annotated
 
+from madewithml import data
 from madewithml.config import logger, mlflow
 from madewithml.data import CustomPreprocessor
 from madewithml.models import FinetunedLLM
@@ -17,6 +20,24 @@ from madewithml.utils import collate_fn
 
 # Initialize Typer CLI app
 app = typer.Typer()
+
+
+def local_path_from_uri(uri: str) -> Path:
+    """Convert a local file URI to a filesystem path."""
+    parsed = urlparse(uri)
+    if parsed.scheme != "file":
+        return Path(uri)
+
+    if parsed.netloc:
+        uri_path = unquote(parsed.netloc + parsed.path)
+        if len(parsed.netloc) >= 2 and parsed.netloc[1] == ":":
+            return PureWindowsPath(uri_path.replace("/", "\\"))
+        return Path(uri_path)
+
+    path = unquote(parsed.path)
+    if len(path) >= 3 and path[0] == "/" and path[2] == ":":
+        return PureWindowsPath(path[1:].replace("/", "\\"))
+    return Path(path)
 
 
 def decode(indices: Iterable[Any], index_to_class: Dict) -> List:
@@ -44,7 +65,7 @@ def format_prob(prob: Iterable, index_to_class: Dict) -> Dict:
     """
     d = {}
     for i, item in enumerate(prob):
-        d[index_to_class[i]] = item
+        d[index_to_class[i]] = float(item)
     return d
 
 
@@ -97,6 +118,20 @@ def predict_proba(
     return results
 
 
+def predict_proba_items(items: List[Dict], predictor: TorchPredictor) -> List:
+    """Predict probabilities for in-memory items without Ray Data."""
+    preprocessor = predictor.get_preprocessor()
+    default_tag = next(iter(preprocessor.class_to_index))
+    df = pd.DataFrame([{**item, "tag": item.get("tag") or default_tag} for item in items])
+    batch = data.preprocess(df=df, class_to_index=preprocessor.class_to_index)
+    y_prob = predictor.predict_proba(batch)["output"]
+    results = []
+    for prob in y_prob:
+        tag = preprocessor.index_to_class[prob.argmax()]
+        results.append({"prediction": tag, "probabilities": format_prob(prob, preprocessor.index_to_class)})
+    return results
+
+
 @app.command()
 def get_best_run_id(experiment_name: str = "", metric: str = "", mode: str = "") -> str:  # pragma: no cover, mlflow logic
     """Get the best run_id from an MLflow experiment.
@@ -127,9 +162,15 @@ def get_best_checkpoint(run_id: str) -> TorchCheckpoint:  # pragma: no cover, ml
     Returns:
         TorchCheckpoint: Best checkpoint from the run.
     """
-    # Resolve run artifacts via MLflow so path handling works on Windows/Jenkins.
-    artifact_dir = mlflow.artifacts.download_artifacts(run_id=run_id)
-    results = Result.from_path(str(artifact_dir))
+    artifact_uri = mlflow.get_run(run_id).info.artifact_uri
+    try:
+        artifact_dir = local_path_from_uri(artifact_uri)
+        if not artifact_dir.exists():
+            raise FileNotFoundError(artifact_dir)
+        results = Result.from_path(str(artifact_dir))
+    except (OSError, ValueError, FileNotFoundError):
+        artifact_dir = mlflow.artifacts.download_artifacts(run_id=run_id)
+        results = Result.from_path(str(artifact_dir))
     return results.best_checkpoints[0][0]
 
 

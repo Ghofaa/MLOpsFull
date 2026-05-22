@@ -10,8 +10,7 @@ import mlflow
 ROOT_DIR = Path(__file__).parent.parent.absolute()
 LOGS_DIR = Path(ROOT_DIR, "logs")
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
-# EFS_DIR = Path(f"/efs/shared_storage/madewithml/{os.environ.get('GITHUB_USERNAME', '')}")
-EFS_DIR = Path(f"D:/mlops/labs/storage")
+EFS_DIR = Path(os.environ.get("MLOPS_STORAGE_DIR", str(Path(ROOT_DIR, "efs"))))
 try:
     Path(EFS_DIR).mkdir(parents=True, exist_ok=True)
 except OSError:

@@ -1,2 +1,16 @@
 venv/
+.venv/
+env/
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+artifacts/
+logs/
+efs/
+.mlops-storage/
 site/
+
+*.ipynb_checkpoints/
