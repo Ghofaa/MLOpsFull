@@ -238,3 +238,604 @@ Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio
 INFO 2026-05-17 13:59:26,853 [/usr/local/lib/python3.10/site-packages/ray/serve/_private/api.py:api.py:serve_start:328]
 Started detached Serve instance in namespace "serve".
 
+INFO 2026-05-22 02:26:53,168 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000023862FD3310>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 02:26:53,170 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+INFO 2026-05-22 02:46:32,476 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000218105057B0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 02:46:32,478 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+INFO 2026-05-22 02:58:27,390 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000016C2FC638B0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 02:58:27,391 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+INFO 2026-05-22 10:51:45,728 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001786F50ADD0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 10:51:45,735 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+INFO 2026-05-22 10:55:48,304 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000012730F0EF50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 10:55:48,305 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+INFO 2026-05-22 10:58:41,252 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002113D8BB100>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 10:58:41,254 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+WARNING 2026-05-22 10:58:58,185 [root:train.py:train_model:220]
+num_samples=30 is small; using at least 50 samples so stratified splitting is stable.
+
+WARNING 2026-05-22 11:01:23,738 [huggingface_hub.file_download:file_download.py:_download_to_tmp_and_move:1736]
+Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+
+INFO 2026-05-22 11:02:28,863 [root:dir_util.py:mkpath:71]
+creating C:\Users\pc\Desktop\Projects\ML-OPS\MLOpsFull\efs\mlflow\645452245715946398\2cb07c8eb5e14f318b5ac822013281cc\artifacts\checkpoint_000000
+
+INFO 2026-05-22 11:02:28,867 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-00-54\TorchTrainer_1ef06_00000_0_2026-05-22_11-00-54\checkpoint_000000\.metadata.json -> C:\\Users\pc\Desktop\Projects\ML-OPS\MLOpsFull\efs\mlflow\645452245715946398\2cb07c8eb5e14f318b5ac822013281cc\artifacts\checkpoint_000000
+
+INFO 2026-05-22 11:02:28,869 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-00-54\TorchTrainer_1ef06_00000_0_2026-05-22_11-00-54\checkpoint_000000\args.json -> C:\\Users\pc\Desktop\Projects\ML-OPS\MLOpsFull\efs\mlflow\645452245715946398\2cb07c8eb5e14f318b5ac822013281cc\artifacts\checkpoint_000000
+
+INFO 2026-05-22 11:02:28,870 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-00-54\TorchTrainer_1ef06_00000_0_2026-05-22_11-00-54\checkpoint_000000\model.pt -> C:\\Users\pc\Desktop\Projects\ML-OPS\MLOpsFull\efs\mlflow\645452245715946398\2cb07c8eb5e14f318b5ac822013281cc\artifacts\checkpoint_000000
+
+INFO 2026-05-22 11:02:34,165 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-00-54\TorchTrainer_1ef06_00000_0_2026-05-22_11-00-54\events.out.tfevents.1779444068.AmineLeVrai -> C:\\Users\pc\Desktop\Projects\ML-OPS\MLOpsFull\efs\mlflow\645452245715946398\2cb07c8eb5e14f318b5ac822013281cc\artifacts
+
+INFO 2026-05-22 11:02:34,167 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-00-54\TorchTrainer_1ef06_00000_0_2026-05-22_11-00-54\params.json -> C:\\Users\pc\Desktop\Projects\ML-OPS\MLOpsFull\efs\mlflow\645452245715946398\2cb07c8eb5e14f318b5ac822013281cc\artifacts
+
+INFO 2026-05-22 11:02:34,169 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-00-54\TorchTrainer_1ef06_00000_0_2026-05-22_11-00-54\params.pkl -> C:\\Users\pc\Desktop\Projects\ML-OPS\MLOpsFull\efs\mlflow\645452245715946398\2cb07c8eb5e14f318b5ac822013281cc\artifacts
+
+INFO 2026-05-22 11:02:34,170 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-00-54\TorchTrainer_1ef06_00000_0_2026-05-22_11-00-54\progress.csv -> C:\\Users\pc\Desktop\Projects\ML-OPS\MLOpsFull\efs\mlflow\645452245715946398\2cb07c8eb5e14f318b5ac822013281cc\artifacts
+
+INFO 2026-05-22 11:02:34,203 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-00-54\TorchTrainer_1ef06_00000_0_2026-05-22_11-00-54\result.json -> C:\\Users\pc\Desktop\Projects\ML-OPS\MLOpsFull\efs\mlflow\645452245715946398\2cb07c8eb5e14f318b5ac822013281cc\artifacts
+
+INFO 2026-05-22 11:02:34,347 [root:train.py:train_model:260]
+{
+  "timestamp": "May 22, 2026 11:02:34 AM",
+  "run_id": "2cb07c8eb5e14f318b5ac822013281cc",
+  "params": {
+    "dropout_p": 0.5,
+    "lr": 0.0001,
+    "lr_factor": 0.8,
+    "lr_patience": 3,
+    "num_samples": 30,
+    "num_epochs": 1,
+    "batch_size": 16,
+    "num_classes": 4
+  },
+  "metrics": [
+    {
+      "epoch": 0,
+      "train_loss": 0.6057124535242716,
+      "val_loss": 0.5514176487922668
+    }
+  ]
+}
+
+INFO 2026-05-22 11:09:42,419 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001B06907F070>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 11:09:42,421 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+INFO 2026-05-22 11:25:25,128 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EFA57D41C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 11:25:25,129 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+INFO 2026-05-22 11:27:25,467 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000022A47BBC3A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 11:27:25,468 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+WARNING 2026-05-22 11:28:59,919 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140042D0BB0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 5128be88-f9a7-458b-b7c1-049db2fd818b)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:28:59,919 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+WARNING 2026-05-22 11:29:00,922 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140042D11B0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 6562c0d1-e658-4bc9-b9f2-926b4d6a557d)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:00,922 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 2s [Retry 2/5].
+
+WARNING 2026-05-22 11:29:02,935 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140042D3D90>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 5a3c10a8-1b7e-4e6a-a0c8-581f32dfe951)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:02,935 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 4s [Retry 3/5].
+
+WARNING 2026-05-22 11:29:06,950 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140042D0AF0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 704a6cdc-6589-4369-884c-1095d7216816)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:06,950 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 4/5].
+
+WARNING 2026-05-22 11:29:14,964 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140042D2F20>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: bc47c1ec-1f39-4e71-867e-c160ab72b857)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:14,964 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 5/5].
+
+WARNING 2026-05-22 11:29:23,010 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140042D2FE0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: cf161109-96c4-42b4-a5cb-9bcc3a5372af)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:23,457 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041015A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 2b17e447-a5d7-4725-a57e-fd9550744e2b)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:23,458 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+WARNING 2026-05-22 11:29:24,466 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004101B10>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 52f2a283-6894-48c3-8c6b-248feda5425f)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:24,466 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 2s [Retry 2/5].
+
+WARNING 2026-05-22 11:29:26,469 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041005E0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: e2aa2f11-a256-40e5-b640-9cd62b8906ce)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:26,469 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 4s [Retry 3/5].
+
+WARNING 2026-05-22 11:29:30,482 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004101870>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 63a64222-5cc3-43bf-a4fa-87abcef31c93)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:30,483 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 4/5].
+
+WARNING 2026-05-22 11:29:38,510 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004103D60>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 55016ae7-c9e6-47c8-a549-eb8339617a99)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:38,511 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 5/5].
+
+WARNING 2026-05-22 11:29:46,518 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004103CD0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 998866a2-c187-4803-a81c-eb1307f3f5dc)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:46,572 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004100E50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: fad2cf3f-2242-4706-ae99-978b54a6b872)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:46,572 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+WARNING 2026-05-22 11:29:47,590 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004103C40>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: dd3d7809-d1bc-4be6-988d-96777de62eaf)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:47,591 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 2s [Retry 2/5].
+
+WARNING 2026-05-22 11:29:49,596 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004100BE0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 5f46f66c-4e32-404c-b6cb-33cfd2572b27)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:49,597 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 4s [Retry 3/5].
+
+WARNING 2026-05-22 11:29:53,605 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004101CC0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 9fd287b6-71dc-4c82-aa96-64961e31515b)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:29:53,605 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 4/5].
+
+WARNING 2026-05-22 11:30:01,609 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004103B20>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: c04fb028-60b2-4728-b2fd-611fb7d19ef4)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:01,609 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 5/5].
+
+WARNING 2026-05-22 11:30:09,621 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004101FC0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: fba32f4b-fafe-44ee-ae6b-bf37b38854d2)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:09,666 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041000D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 624e9207-8927-4f9e-acce-ca791b53a09c)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:09,667 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+WARNING 2026-05-22 11:30:10,680 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004102170>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: f55ed1a1-7a48-4db5-8591-3c62a400ff72)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:10,680 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 2s [Retry 2/5].
+
+WARNING 2026-05-22 11:30:12,698 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041009A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 55f37466-de6f-4e9a-b187-24ff1b01a536)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:12,698 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 4s [Retry 3/5].
+
+WARNING 2026-05-22 11:30:16,711 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041006D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 6a14e3ac-f0aa-45d7-b681-f86c0e18b46c)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:16,711 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 4/5].
+
+WARNING 2026-05-22 11:30:24,714 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004100130>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: e46355ab-4dac-44ce-bf89-8804158be4f4)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:24,714 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 5/5].
+
+WARNING 2026-05-22 11:30:32,732 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004100B80>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: cb736944-3937-45ee-b9c6-5e7cfec4d0d9)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:32,783 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041025C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: e2381dc2-ebb1-450b-adb9-1ed62d7a2367)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:32,784 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+WARNING 2026-05-22 11:30:33,803 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041022F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: e23fd8b7-4dd1-4f47-a8aa-235cb6422cc7)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:33,804 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 2s [Retry 2/5].
+
+WARNING 2026-05-22 11:30:35,821 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041017B0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: bc6212fb-078b-47a8-9eed-3406793b5807)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:35,822 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 4s [Retry 3/5].
+
+WARNING 2026-05-22 11:30:39,834 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004100790>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: d6a245fb-310f-46e3-9749-04efcb33192b)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:39,834 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 4/5].
+
+WARNING 2026-05-22 11:30:47,858 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004100910>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 04038fc1-82e9-452d-a076-1a3522363c3a)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:47,858 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 5/5].
+
+WARNING 2026-05-22 11:30:55,887 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004100940>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 9c7b6f7a-7818-4d8b-a059-69db174bee1a)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:55,945 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004103CD0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 0bbc5bb6-c921-4ebb-bf93-a374734a4f7b)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:55,945 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+WARNING 2026-05-22 11:30:56,973 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004103A60>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: d9a567ee-f5ca-4300-9888-8b98da729dfa)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:56,973 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 2s [Retry 2/5].
+
+WARNING 2026-05-22 11:30:58,978 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041004C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 397db805-8a3a-48ef-ade5-0d2068864295)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:30:58,979 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 4s [Retry 3/5].
+
+WARNING 2026-05-22 11:31:03,015 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041016C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: c5df6921-fba2-4a5d-8301-218a121faf4d)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:03,016 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 4/5].
+
+WARNING 2026-05-22 11:31:11,022 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041038E0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 9bed73e3-763d-4351-a5ee-45b0d097c12e)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:11,022 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 5/5].
+
+WARNING 2026-05-22 11:31:19,038 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004101A20>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 307d877e-16bb-44df-92c1-096091f70714)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:19,121 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004103970>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 1e2c9e16-d7eb-42ee-97f8-7a9fb80277a5)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:19,122 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+WARNING 2026-05-22 11:31:20,136 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004103CA0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 559e7e34-53c9-4163-8bb2-6480fe160b78)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:20,137 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 2s [Retry 2/5].
+
+WARNING 2026-05-22 11:31:22,155 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041002E0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: daa1a996-96d8-4d98-baa8-f391a50c4999)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:22,155 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 4s [Retry 3/5].
+
+WARNING 2026-05-22 11:31:26,180 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004101870>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 9b30445a-9307-4b2d-9ee1-f35cb1ed835c)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:26,181 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 4/5].
+
+WARNING 2026-05-22 11:31:34,206 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004100BE0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 29fc679a-4ee7-4d16-b6c2-65454a64a973)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:34,206 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 5/5].
+
+WARNING 2026-05-22 11:31:42,220 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004101090>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 7ef53384-2601-4cff-956e-795f12ef7880)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:42,263 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004101180>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: a5260c75-ab36-4699-a524-fa1e0a8fa428)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:42,264 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+WARNING 2026-05-22 11:31:43,274 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004100B80>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 228aa7d8-63ca-4751-bd1c-982565b57322)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:43,274 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 2s [Retry 2/5].
+
+WARNING 2026-05-22 11:31:45,296 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041007F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: fc5fd96c-fbc8-476b-be23-4988b0b0148f)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:45,297 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 4s [Retry 3/5].
+
+WARNING 2026-05-22 11:31:49,302 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041019F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: d954d811-a2f5-41e2-ab04-a17993e9b86d)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:49,304 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 4/5].
+
+WARNING 2026-05-22 11:31:57,316 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004102200>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: f61b5618-1800-4a50-a3ab-200c7b0f6a09)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:31:57,317 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 8s [Retry 5/5].
+
+WARNING 2026-05-22 11:32:05,328 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004102410>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: e6b00428-47c6-4b25-a12a-6d05786b40a3)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:32:05,419 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000140041005B0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 253c1fc2-871b-498f-9b49-57c358e10a26)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:32:05,419 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+WARNING 2026-05-22 11:32:06,423 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004101CC0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: aa26ed61-25c3-4165-bfe0-b798ffc15711)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:32:06,423 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 2s [Retry 2/5].
+
+WARNING 2026-05-22 11:32:08,427 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /allenai/scibert_scivocab_uncased/resolve/main/vocab.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014004101690>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))"), '(Request ID: 09a0d992-27ec-4bca-9cc2-7e6bf7c88b7a)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:32:08,428 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 4s [Retry 3/5].
+
+INFO 2026-05-22 11:41:42,827 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002291DD8E470>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 11:41:42,828 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+WARNING 2026-05-22 11:43:33,533 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 47458417-eb9c-42c9-bdd3-0fcd3cee7302)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:43:33,534 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+INFO 2026-05-22 11:44:54,447 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001A8D858F850>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 11:44:54,448 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+INFO 2026-05-22 11:47:55,966 [root:dir_util.py:mkpath:71]
+creating C:\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\cbd472ab426848d793801f474439b262\artifacts\checkpoint_000000
+
+INFO 2026-05-22 11:47:55,967 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-46-46\TorchTrainer_874cb_00000_0_2026-05-22_11-46-46\checkpoint_000000\.metadata.json -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\cbd472ab426848d793801f474439b262\artifacts\checkpoint_000000
+
+INFO 2026-05-22 11:47:55,969 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-46-46\TorchTrainer_874cb_00000_0_2026-05-22_11-46-46\checkpoint_000000\args.json -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\cbd472ab426848d793801f474439b262\artifacts\checkpoint_000000
+
+INFO 2026-05-22 11:47:55,971 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-46-46\TorchTrainer_874cb_00000_0_2026-05-22_11-46-46\checkpoint_000000\model.pt -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\cbd472ab426848d793801f474439b262\artifacts\checkpoint_000000
+
+INFO 2026-05-22 11:48:00,149 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-46-46\TorchTrainer_874cb_00000_0_2026-05-22_11-46-46\events.out.tfevents.1779446819.AmineLeVrai -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\cbd472ab426848d793801f474439b262\artifacts
+
+INFO 2026-05-22 11:48:00,151 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-46-46\TorchTrainer_874cb_00000_0_2026-05-22_11-46-46\params.json -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\cbd472ab426848d793801f474439b262\artifacts
+
+INFO 2026-05-22 11:48:00,153 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-46-46\TorchTrainer_874cb_00000_0_2026-05-22_11-46-46\params.pkl -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\cbd472ab426848d793801f474439b262\artifacts
+
+INFO 2026-05-22 11:48:00,156 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-46-46\TorchTrainer_874cb_00000_0_2026-05-22_11-46-46\progress.csv -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\cbd472ab426848d793801f474439b262\artifacts
+
+INFO 2026-05-22 11:48:00,158 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-46-46\TorchTrainer_874cb_00000_0_2026-05-22_11-46-46\result.json -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\cbd472ab426848d793801f474439b262\artifacts
+
+INFO 2026-05-22 11:48:00,307 [root:train.py:train_model:260]
+{
+  "timestamp": "May 22, 2026 11:48:00 AM",
+  "run_id": "cbd472ab426848d793801f474439b262",
+  "params": {
+    "dropout_p": 0.5,
+    "lr": 0.0001,
+    "lr_factor": 0.8,
+    "lr_patience": 1,
+    "num_samples": 100,
+    "num_epochs": 1,
+    "batch_size": 16,
+    "num_classes": 4
+  },
+  "metrics": [
+    {
+      "epoch": 0,
+      "train_loss": 0.5815120458602905,
+      "val_loss": 0.5728339850902557
+    }
+  ]
+}
+
+INFO 2026-05-22 11:48:44,977 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000251AFE7F0A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 11:48:44,978 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+INFO 2026-05-22 11:51:50,287 [root:dir_util.py:mkpath:71]
+creating C:\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\5730f491087f4edf9cb0a3106a899396\artifacts\checkpoint_000000
+
+INFO 2026-05-22 11:51:50,290 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-50-43\TorchTrainer_14d29_00000_0_2026-05-22_11-50-43\checkpoint_000000\.metadata.json -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\5730f491087f4edf9cb0a3106a899396\artifacts\checkpoint_000000
+
+INFO 2026-05-22 11:51:50,301 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-50-43\TorchTrainer_14d29_00000_0_2026-05-22_11-50-43\checkpoint_000000\args.json -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\5730f491087f4edf9cb0a3106a899396\artifacts\checkpoint_000000
+
+INFO 2026-05-22 11:51:50,303 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-50-43\TorchTrainer_14d29_00000_0_2026-05-22_11-50-43\checkpoint_000000\model.pt -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\5730f491087f4edf9cb0a3106a899396\artifacts\checkpoint_000000
+
+INFO 2026-05-22 11:51:53,910 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-50-43\TorchTrainer_14d29_00000_0_2026-05-22_11-50-43\events.out.tfevents.1779447057.AmineLeVrai -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\5730f491087f4edf9cb0a3106a899396\artifacts
+
+INFO 2026-05-22 11:51:53,912 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-50-43\TorchTrainer_14d29_00000_0_2026-05-22_11-50-43\params.json -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\5730f491087f4edf9cb0a3106a899396\artifacts
+
+INFO 2026-05-22 11:51:53,914 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-50-43\TorchTrainer_14d29_00000_0_2026-05-22_11-50-43\params.pkl -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\5730f491087f4edf9cb0a3106a899396\artifacts
+
+INFO 2026-05-22 11:51:53,916 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-50-43\TorchTrainer_14d29_00000_0_2026-05-22_11-50-43\progress.csv -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\5730f491087f4edf9cb0a3106a899396\artifacts
+
+INFO 2026-05-22 11:51:53,917 [root:file_util.py:copy_file:137]
+copying C:/Users/pc/Desktop/Projects/ML-OPS/MLOpsFull/efs\TorchTrainer_2026-05-22_11-50-43\TorchTrainer_14d29_00000_0_2026-05-22_11-50-43\result.json -> C:\\Master\mlOps\MLOpsFull-1\efs\mlflow\501464900959328482\5730f491087f4edf9cb0a3106a899396\artifacts
+
+INFO 2026-05-22 11:51:54,140 [root:train.py:train_model:260]
+{
+  "timestamp": "May 22, 2026 11:51:53 AM",
+  "run_id": "5730f491087f4edf9cb0a3106a899396",
+  "params": {
+    "dropout_p": 0.5,
+    "lr": 0.0001,
+    "lr_factor": 0.8,
+    "lr_patience": 1,
+    "num_samples": 100,
+    "num_epochs": 1,
+    "batch_size": 16,
+    "num_classes": 4
+  },
+  "metrics": [
+    {
+      "epoch": 0,
+      "train_loss": 0.5815120458602905,
+      "val_loss": 0.5728339850902557
+    }
+  ]
+}
+
+WARNING 2026-05-22 11:52:06,745 [huggingface_hub.utils._http:_http.py:http_backoff:320]
+'(ReadTimeoutError("HTTPSConnectionPool(host='huggingface.co', port=443): Read timed out. (read timeout=10)"), '(Request ID: 35b03a45-365d-4468-83dc-132dae33b3d8)')' thrown while requesting HEAD https://huggingface.co/allenai/scibert_scivocab_uncased/resolve/main/vocab.txt
+
+WARNING 2026-05-22 11:52:06,746 [huggingface_hub.utils._http:_http.py:http_backoff:329]
+Retrying in 1s [Retry 1/5].
+
+INFO 2026-05-22 11:52:45,661 [root:evaluate.py:evaluate:147]
+{
+  "timestamp": "May 22, 2026 11:52:45 AM",
+  "run_id": "5730f491087f4edf9cb0a3106a899396",
+  "overall": {
+    "precision": 0.39300704435832956,
+    "recall": 0.49214659685863876,
+    "f1": 0.42781348581374123,
+    "num_samples": 191.0
+  },
+  "per_class": {
+    "natural-language-processing": {
+      "precision": 0.4645669291338583,
+      "recall": 0.7564102564102564,
+      "f1": 0.575609756097561,
+      "num_samples": 78.0
+    },
+    "computer-vision": {
+      "precision": 0.546875,
+      "recall": 0.49295774647887325,
+      "f1": 0.5185185185185185,
+      "num_samples": 71.0
+    },
+    "mlops": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "num_samples": 16.0
+    },
+    "other": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "num_samples": 26.0
+    }
+  },
+  "slices": {
+    "nlp_llm": {
+      "precision": 0.6785714285714286,
+      "recall": 0.6785714285714286,
+      "f1": 0.6785714285714286,
+      "num_samples": 28
+    },
+    "short_text": {
+      "precision": 0.2857142857142857,
+      "recall": 0.2857142857142857,
+      "f1": 0.2857142857142857,
+      "num_samples": 7
+    }
+  }
+}
+
+INFO 2026-05-22 11:53:21,550 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000239090FD900>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 11:53:21,551 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+INFO 2026-05-22 11:55:39,092 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000281C161E500>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 11:55:39,093 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+INFO 2026-05-22 11:55:58,781 [root:serve.py:__init__:77]
+Drift detectors initialized (KSDrift + ChiSquareDrift) with 764 reference points.
+
+INFO 2026-05-22 11:56:48,726 [root:accelerator.py:_autodetect_tpu_version:216]
+Unable to poll TPU GCE metadata: HTTPConnectionPool(host='metadata.google.internal', port=80): Max retries exceeded with url: /computeMetadata/v1/instance/attributes/accelerator-type (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000278C5B8E830>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+INFO 2026-05-22 11:56:48,727 [root:accelerator.py:_autodetect_num_tpus:171]
+Failed to detect number of TPUs: [WinError 3] The system cannot find the path specified: '/dev/vfio'
+
+INFO 2026-05-22 11:56:56,559 [root:serve.py:__init__:77]
+Drift detectors initialized (KSDrift + ChiSquareDrift) with 764 reference points.
+
+INFO 2026-05-22 11:56:57,241 [root:serve.py:_log_request_metrics:190]
+{"event": "request_metrics", "timestamp": "2026-05-22T10:56:57.241608", "endpoint": "/predict/", "run_id": "5730f491087f4edf9cb0a3106a899396", "status": "ok", "http_status": 200, "latency_ms": 404.87}
+

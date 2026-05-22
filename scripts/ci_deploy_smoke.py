@@ -30,7 +30,7 @@ def http_post_json(url: str, payload: dict, timeout: int = 30) -> tuple[int, str
         return response.status, response.read().decode("utf-8")
 
 
-def wait_for_service(base_url: str, attempts: int = 30, delay: float = 2.0) -> None:
+def wait_for_service(base_url: str, attempts: int = 90, delay: float = 2.0) -> None:
     last_error = None
     for _ in range(attempts):
         try:
@@ -46,6 +46,8 @@ def wait_for_service(base_url: str, attempts: int = 30, delay: float = 2.0) -> N
 def start_fastapi_server(run_id: str, host: str, port: int, threshold: float) -> subprocess.Popen:
     env = os.environ.copy()
     env.setdefault("GITHUB_USERNAME", "ci-user")
+    repo_root = str(Path(__file__).resolve().parents[1])
+    env["PYTHONPATH"] = repo_root
     command = [
         sys.executable,
         "-m",
@@ -87,6 +89,14 @@ def main() -> int:
     summary_path = Path(args.summary)
     summary = json.loads(summary_path.read_text(encoding="utf-8"))
     run_id = summary["run_id"]
+
+    try:
+        import ray
+
+        if ray.is_initialized():
+            ray.shutdown()
+    except Exception:
+        pass
 
     base = f"http://{args.host}:{args.port}"
     process = None

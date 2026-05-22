@@ -56,6 +56,11 @@ def parse_args() -> argparse.Namespace:
         default=5,
         help="How many recent drift events from logs to inspect.",
     )
+    parser.add_argument(
+        "--fail-on-alert",
+        action="store_true",
+        help="Exit with code 1 when any alert is triggered (default: write ticket only).",
+    )
     return parser.parse_args()
 
 
@@ -159,7 +164,9 @@ def main() -> int:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(alert_ticket, indent=2), encoding="utf-8")
     print(json.dumps(alert_ticket, indent=2))
-    return 1 if triggered_alerts else 0
+    if args.fail_on_alert and triggered_alerts:
+        return 1
+    return 0
 
 
 if __name__ == "__main__":

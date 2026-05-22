@@ -121,7 +121,14 @@ def tune_models(
     run_config = RunConfig(callbacks=[mlflow_callback], checkpoint_config=checkpoint_config, storage_path=EFS_DIR, local_dir=EFS_DIR)
 
     # Hyperparameters to start with
-    initial_params = json.loads(initial_params)
+    initial_params = utils.parse_config_json(
+        initial_params,
+        default={"train_loop_config": utils.DEFAULT_TRAIN_LOOP_CONFIG},
+    )
+    if isinstance(initial_params, dict):
+        if "train_loop_config" not in initial_params:
+            initial_params = {"train_loop_config": initial_params}
+        initial_params = [initial_params]
     search_alg = HyperOptSearch(points_to_evaluate=initial_params)
     search_alg = ConcurrencyLimiter(search_alg, max_concurrent=2)  # trade off b/w optimization and search space
 
@@ -174,6 +181,7 @@ def tune_models(
 
 
 if __name__ == "__main__":  # pragma: no cover, application
+    os.environ.setdefault("GITHUB_USERNAME", "local-user")
     if ray.is_initialized():
         ray.shutdown()
     ray.init(runtime_env={"env_vars": {"GITHUB_USERNAME": os.environ["GITHUB_USERNAME"]}})

@@ -62,6 +62,7 @@ def main() -> int:
             num_cpus=1,
             num_gpus=0,
             include_dashboard=False,
+            object_store_memory=200 * 1024 * 1024,
             runtime_env={"env_vars": {"GITHUB_USERNAME": os.environ.get("GITHUB_USERNAME", "ci-user")}},
         )
         # ===== ADDED: Force CPU-only Ray init for Jenkins Windows agent (END) =====
@@ -71,9 +72,9 @@ def main() -> int:
             dataset_loc=args.dataset,
             train_loop_config=json.dumps(train_loop_config),
             num_workers=1,
-            cpu_per_worker=0.001,
+            cpu_per_worker=0.5,
             gpu_per_worker=0,
-            trainer_cpus=0,
+            trainer_cpus=0.5,
             num_samples=args.num_samples,
             num_epochs=args.num_epochs,
             batch_size=args.batch_size,
